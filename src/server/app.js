@@ -13,11 +13,20 @@ var mongoose = require('mongoose');
 var expressSession = require('express-session');
 
 var Product = mongoose.model('products');
+var User = mongoose.model('users');
 
+// passport config
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+
+passport.deserializeUser(User.deserializeUser());
 
 // *** routes *** //
 var routes = require('./routes/index.js');
 var productRoutes = require('./routes/product.js');
+
+var adminAndUserRoutes = require('.routes/user.js');
 
 
 // *** express instance *** //
@@ -48,11 +57,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
+app.use(require('express-session')({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 // *** main routes *** //
 app.use('/', routes);
 app.use('/products', productRoutes);
+app.use('/', adminAndUserRoutes);
 
 
 
