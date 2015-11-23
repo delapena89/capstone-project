@@ -42,6 +42,29 @@ router.get('/:id', function(req, res, next) {
   }).done();
 });
 
+// put single product
+router.put('/:id', function(req, res, next) {
+  var update = {
+    sku: req.body.sku,
+    price: req.body.price,
+    loadCapacity: req.body.loadCapacity,
+    ballMaterial: req.body.ballMaterial,
+    housingMaterial: req.body.housingMaterial,
+    description: req.body.description,
+    image1: req.body.image1,
+    image2: req.body.image2
+  };
+  var options = {
+    new: true,
+  };
+  Product.findByIdAndUpdateQ(req.params.id, update, options)
+  .then(function(response) {
+    res.json(response);
+  }).catch(function(response) {
+    res.json({'message': response});
+  }).done();
+});
+
 
 
 

@@ -62,6 +62,8 @@ describe("products", function() {
         res.body[0].loadCapacity.should.be.equal('75 lbs');
         res.body[0].ballMaterial.should.be.a('string');
         res.body[0].ballMaterial.should.be.equal('nylon');
+        res.body[0].housingMaterial.should.be.a('string');
+        res.body[0].housingMaterial.should.be.equal('carbon steel');
         res.body[0].description.should.be.a('string');
         res.body[0].description.should.be.equal('sample text');
         res.body[0].image1.should.be.a('string');
@@ -88,6 +90,8 @@ describe("products", function() {
         res.body[0].loadCapacity.should.be.equal('75 lbs');
         res.body[0].ballMaterial.should.be.a('string');
         res.body[0].ballMaterial.should.be.equal('nylon');
+        res.body[0].housingMaterial.should.be.a('string');
+        res.body[0].housingMaterial.should.be.equal('carbon steel');
         res.body[0].description.should.be.a('string');
         res.body[0].description.should.be.equal('sample text');
         res.body[0].image1.should.be.a('string');
@@ -116,6 +120,8 @@ it('should list a SINGLE item on /item/<id> GET',
         res.body.loadCapacity.should.be.equal('75 lbs');
         res.body.ballMaterial.should.be.a('string');
         res.body.ballMaterial.should.be.equal('nylon');
+        res.body.housingMaterial.should.be.a('string');
+        res.body.housingMaterial.should.be.equal('carbon steel');
         res.body.description.should.be.a('string');
         res.body.description.should.be.equal('sample text');
         res.body.image1.should.be.a('string');
@@ -130,6 +136,16 @@ it('should list a SINGLE item on /item/<id> GET',
     function(done) {
       chai.request(server)
       .put('/products/' + id)
+      .send({
+      sku: 'test test',
+      price: 40,
+      loadCapacity: '100 lbs',
+      ballMaterial: 'stainless steel',
+      housingMaterial: 'carbon steel',
+      description: 'more sample text',
+      image1: 'some picture url',
+      image2: 'some picture2 url'
+    })
       .end(function(err, res) {
         res.should.have.status(200);
         res.should.be.json;
@@ -144,6 +160,8 @@ it('should list a SINGLE item on /item/<id> GET',
         res.body.loadCapacity.should.be.equal('100 lbs');
         res.body.ballMaterial.should.be.a('string');
         res.body.ballMaterial.should.be.equal('stainless steel');
+        res.body.housingMaterial.should.be.a('string');
+        res.body.housingMaterial.should.be.equal('carbon steel');
         res.body.description.should.be.a('string');
         res.body.description.should.be.equal('more sample text');
         res.body.image1.should.be.a('string');
@@ -152,7 +170,7 @@ it('should list a SINGLE item on /item/<id> GET',
         res.body.image2.should.be.equal('some picture2 url');
         done();
       });
-      });
+    });
 
 
 
