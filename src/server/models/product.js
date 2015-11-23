@@ -8,7 +8,8 @@ var Product = new Schema({
   ballMaterial: String,
   housingMaterial: String,
   description: String,
-  images: {},
+  image1: String,
+  image2: String
 });
 
 module.exports = mongoose.model('products', Product);

@@ -21,7 +21,8 @@ describe("products", function() {
       ballMaterial: 'nylon',
       housingMaterial: 'carbon steel',
       description: 'sample text',
-      images: {},
+      image1: 'some picture',
+      image2: 'some picture2'
     });
     id = newProduct._id;
     newProduct.save(function(err) {
@@ -46,10 +47,10 @@ describe("products", function() {
       ballMaterial: 'nylon',
       housingMaterial: 'carbon steel',
       description: 'sample text',
-      images: [],
+      image1: 'some picture',
+      image2: 'some picture2'
     })
       .end(function(err,res) {
-        console.log(res.body, "RES");
         res.should.have.status(200);
         res.should.be.json;
         res.should.be.a('object');
@@ -63,9 +64,98 @@ describe("products", function() {
         res.body[0].ballMaterial.should.be.equal('nylon');
         res.body[0].description.should.be.a('string');
         res.body[0].description.should.be.equal('sample text');
+        res.body[0].image1.should.be.a('string');
+        res.body[0].image1.should.be.equal('some picture');
+        res.body[0].image2.should.be.a('string');
+        res.body[0].image2.should.be.equal('some picture2');
         done();
       });
     });
+
+  it('should list ALL items on /items GET',
+    function(done) {
+      chai.request(server)
+      .get('/products')
+      .end(function(err, res) {
+        res.should.have.status(200);
+        res.should.be.json;
+        res.body.should.be.a('array');
+        res.body[0].sku.should.be.a('string');
+        res.body[0].sku.should.equal('test');
+        res.body[0].price.should.be.a('number');
+        res.body[0].price.should.be.equal(20);
+        res.body[0].loadCapacity.should.be.a('string');
+        res.body[0].loadCapacity.should.be.equal('75 lbs');
+        res.body[0].ballMaterial.should.be.a('string');
+        res.body[0].ballMaterial.should.be.equal('nylon');
+        res.body[0].description.should.be.a('string');
+        res.body[0].description.should.be.equal('sample text');
+        res.body[0].image1.should.be.a('string');
+        res.body[0].image1.should.be.equal('some picture');
+        res.body[0].image2.should.be.a('string');
+        res.body[0].image2.should.be.equal('some picture2');
+        done();
+      });
+    });
+
+it('should list a SINGLE item on /item/<id> GET',
+    function(done) {
+      chai.request(server)
+      .get('/products/' + id)
+      .end(function(err, res) {
+        res.should.have.status(200);
+        res.should.be.json;
+        console.log(res.body);
+        console.log(id);
+        res.body.should.be.a('object');
+        res.body.sku.should.be.a('string');
+        res.body.sku.should.be.equal('test');
+        res.body.price.should.be.a('number');
+        res.body.price.should.be.equal(20);
+        res.body.loadCapacity.should.be.a('string');
+        res.body.loadCapacity.should.be.equal('75 lbs');
+        res.body.ballMaterial.should.be.a('string');
+        res.body.ballMaterial.should.be.equal('nylon');
+        res.body.description.should.be.a('string');
+        res.body.description.should.be.equal('sample text');
+        res.body.image1.should.be.a('string');
+        res.body.image1.should.be.equal('some picture');
+        res.body.image2.should.be.a('string');
+        res.body.image2.should.be.equal('some picture2');
+        done();
+      });
+    });
+
+  it('should update a SINGLE item on /item/<id> PUT',
+    function(done) {
+      chai.request(server)
+      .put('/products/' + id)
+      .end(function(err, res) {
+        res.should.have.status(200);
+        res.should.be.json;
+        console.log(res.body);
+        console.log(id);
+        res.body.should.be.a('object');
+        res.body.sku.should.be.a('string');
+        res.body.sku.should.be.equal('test test');
+        res.body.price.should.be.a('number');
+        res.body.price.should.be.equal(40);
+        res.body.loadCapacity.should.be.a('string');
+        res.body.loadCapacity.should.be.equal('100 lbs');
+        res.body.ballMaterial.should.be.a('string');
+        res.body.ballMaterial.should.be.equal('stainless steel');
+        res.body.description.should.be.a('string');
+        res.body.description.should.be.equal('more sample text');
+        res.body.image1.should.be.a('string');
+        res.body.image1.should.be.equal('some picture url');
+        res.body.image2.should.be.a('string');
+        res.body.image2.should.be.equal('some picture2 url');
+        done();
+      });
+      });
+
+
+
 
 });
 
