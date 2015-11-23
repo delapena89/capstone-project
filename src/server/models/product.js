@@ -6,7 +6,7 @@ var Product = new Schema({
   price: Number,
   loadCapacity: String,
   ballMaterial: String,
-  housingMaterail: String,
+  housingMaterial: String,
   description: String,
   images: {},
 });

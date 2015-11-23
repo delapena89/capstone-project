@@ -17,6 +17,7 @@ var Product = mongoose.model('products');
 
 // *** routes *** //
 var routes = require('./routes/index.js');
+var productRoutes = require('./routes/product.js');
 
 
 // *** express instance *** //
@@ -51,6 +52,8 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 // *** main routes *** //
 app.use('/', routes);
+app.use('/products', productRoutes);
+
 
 
 // catch 404 and forward to error handler
