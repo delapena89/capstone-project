@@ -65,6 +65,16 @@ router.put('/:id', function(req, res, next) {
   }).done();
 });
 
+// // delete single product
+router.delete('/:id', function(req, res, next) {
+  Product.findByIdAndRemoveQ(req.params.id)
+  .then(function(response) {
+    res.json(response);
+  }).catch(function(response) {
+    res.json({'message': response});
+  }).done();
+});
+
 
 
 

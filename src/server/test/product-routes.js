@@ -172,6 +172,21 @@ it('should list a SINGLE item on /item/<id> GET',
       });
     });
 
+it('should delete a SINGLE item on /item/<id> DELETE',
+function(done) {
+      chai.request(server)
+      .delete('/products/' + id)
+      .end(function(err, res) {
+        console.log(res.body);
+        res.should.have.status(200);
+        res.should.be.json;
+        res.body.should.be.a('object');
+        console.log(res.body);
+        done();
+      });
+    });
+
+
 
 
 
