@@ -1,5 +1,6 @@
 // *** main dependencies *** //
 require('./models/product.js');
+require('./models/user.js');
 
 var express = require('express');
 var path = require('path');
@@ -11,6 +12,8 @@ var config = require('../../_config');
 // var swig = require('swig');
 var mongoose = require('mongoose');
 var expressSession = require('express-session');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 var Product = mongoose.model('products');
 var User = mongoose.model('users');
@@ -25,8 +28,7 @@ passport.deserializeUser(User.deserializeUser());
 // *** routes *** //
 var routes = require('./routes/index.js');
 var productRoutes = require('./routes/product.js');
-
-var adminAndUserRoutes = require('.routes/user.js');
+var adminAndUserRoutes = require('./routes/user.js');
 
 
 // *** express instance *** //
