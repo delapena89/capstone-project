@@ -1,11 +1,16 @@
 app.controller('registerCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location){
 
+  $scope.success = false;
+  $scope.message = '';
+
   $scope.register = function () {
     console.log($scope.customername, $scope.customerusername, $scope.customerpassword);
     $http.get('/users/findByUsername/' + $scope.customerusername)
     .then(function(res){
     if (res.data) {
       console.log('username is taken');
+      $scope.success = true;
+      $scope.message = 'Username is already taken, please try another one.';
     } else {
       $http.post('/users/register', {
         name: $scope.customername,
