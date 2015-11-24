@@ -51,5 +51,12 @@ router.post('/login', function(req,res,next){
 });
 
 // user logout
+router.get('/logout', function(req, res) {
+  console.log(req.session.user, "pre");
+  req.logout();
+  req.session.user = '';
+  console.log(req.session.user, "post");
+  res.status(200).json({status: "Logged out."});
+});
 
 module.exports = router;
