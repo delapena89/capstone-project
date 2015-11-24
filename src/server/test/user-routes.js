@@ -14,9 +14,9 @@ describe('users', function() {
 
   beforeEach(function(done) {
     var newUser = new User({
-      name: "Luis",
-      username: "delapenl",
-      password: "Panzon"
+      name: "bob",
+      username: "something",
+      password: "other"
     });
     id = newUser._id;
     newUser.save(function(err) {
@@ -46,6 +46,7 @@ describe('users', function() {
         done();
       });
     });
+
 
 
 
