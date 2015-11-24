@@ -48,7 +48,25 @@ describe('users', function() {
     });
 
 
-
+  it('should login....',
+    function(done) {
+      chai.request(server)
+      .post('/login')
+      .send({
+        username: 'some user',
+        password: 'some password'
+    })
+      .end(function(err,res) {
+        console.log(res)
+        res.should.have.status(200);
+        res.should.be.json;
+        res.should.be.a('object');
+        res.body.account.username.should.be.a('string');
+        res.body.account.username.should.be.equal('some user');
+        res.body.account.hash.should.be.a('string');
+        done();
+      });
+    });
 
 
 
