@@ -71,7 +71,7 @@ app.use(passport.session());
 // *** main routes *** //
 app.use('/', routes);
 app.use('/products', productRoutes);
-app.use('/', adminAndUserRoutes);
+app.use('/users', adminAndUserRoutes);
 
 
 
