@@ -52,11 +52,30 @@ router.post('/login', function(req,res,next){
 
 // user logout
 router.get('/logout', function(req, res) {
-  console.log(req.session.user, "pre");
+  console.log(req.session.user, 'pre-logout');
   req.logout();
   req.session.user = '';
-  console.log(req.session.user, "post");
-  res.status(200).json({status: "Logged out."});
+  console.log(req.session.user, 'post-logout');
+  res.status(200).json({status: "Logged out"});
 });
+
+
+// checks unique user username
+router.get('/findByUsername/:username', function(req, res, next) {
+  User.findOne({ username: req.params.username }, function (err, doc) {
+    // if ( doc ) {
+    //   res.send(true);
+    // } else {
+    //   res.send(false);
+    // }
+
+    doc ? res.send(true) : res.send(false);
+
+  });
+});
+
+
+
+
 
 module.exports = router;
