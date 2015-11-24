@@ -8,6 +8,21 @@ app.controller('registerCtrl', ['$scope', '$rootScope', '$http', '$location', fu
       password: $scope.customerpassword
     }).then(function(data){
       console.log(data);
+      $location.path('/customer-login');
+    });
+  };
+
+  $scope.login = function () {
+    console.log('click');
+    $http.post('/users/login', {
+      name: $scope.customername,
+      username: $scope.customerusername,
+      password: $scope.customerpassword
+    })
+    .then(function(data){
+      console.log(data.data.user);
+      $rootScope.user = data.data.user;
+      $location.path('/');
     });
   };
 
