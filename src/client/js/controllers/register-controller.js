@@ -52,7 +52,7 @@ app.controller('registerCtrl', ['$scope', '$rootScope', '$http', '$location', fu
   };
 
   $scope.loggedIn = function() {
-    if ($rootScope.userName === name) {
+    if ($rootScope.userName) {
       return true;
     } else {
       return false;
