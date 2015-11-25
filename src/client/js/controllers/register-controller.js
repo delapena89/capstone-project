@@ -34,8 +34,8 @@ app.controller('registerCtrl', ['$scope', '$rootScope', '$http', '$location', fu
       password: $scope.customerpassword
     })
     .then(function(data){
-      console.log(data.data.user);
-      $rootScope.user = data.data.user;
+      console.log(data.data.user.name);
+      $rootScope.userName = data.data.user.name;
       $location.path('/');
     });
   };
@@ -46,9 +46,17 @@ app.controller('registerCtrl', ['$scope', '$rootScope', '$http', '$location', fu
     .then(function(data) {
       console.log(data);
       console.log('user is logged out');
-      $rootScope.user = '';
+      $rootScope.userName = '';
       $location.path('/');
     });
+  };
+
+  $scope.loggedIn = function() {
+    if ($rootScope.userName === name) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
 
