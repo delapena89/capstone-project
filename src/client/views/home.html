@@ -4,15 +4,15 @@
   <h1>Bearings</h1>
 
   <div class='btn-group'>
-    <a href="/#/" class='btn btn-lg btn-primary'>Home</a>
+    <a href="/#/" class='btn btn-lg btn-primary border'>Home</a>
 <!--     <a href="/#/about" class='btn btn-lg btn-primary'>About</a>
- -->    <a href="/#/products" class='btn btn-lg btn-primary'>Products</a>
-    <a href="/#/customer-service" class='btn btn-lg btn-primary'>Customer Service</a>
-    <a ng-if='loggedIn()' href="/#/order-history" class='btn btn-lg btn-primary'>Order History</a>
-    <a href="/#/shopping-cart" class='btn btn-lg btn-primary'>Shopping Cart</a>
-    <a href="/#/register" class='btn btn-lg btn-primary'>Register</a>
-    <a href="/#/customer-login" class='btn btn-lg btn-primary'>Customer Login</a>
-    <a href="/#/admin-register" class='btn btn-lg btn-primary'>Admin Login</a>
+ -->    <a href="/#/products" class='btn btn-lg btn-primary border'>Products</a>
+    <a href="/#/customer-service" class='btn btn-lg btn-primary border'>Customer Service</a>
+    <a ng-if='loggedIn()' href="/#/order-history" class='btn btn-lg btn-primary border'>Order History</a>
+    <a href="/#/shopping-cart" class='btn btn-lg btn-primary border'>Shopping Cart</a>
+    <a href="/#/register" class='btn btn-lg btn-primary border'>Register</a>
+    <a href="/#/customer-login" class='btn btn-lg btn-primary border'>Customer Login</a>
+    <a href="/#/admin-register" class='btn btn-lg btn-primary border'>Admin Login</a>
   </div>
 
   <div ng-show='userName' class='right top-right color'>
@@ -21,8 +21,10 @@
 
 </div>
 
-  <button ng-if='loggedIn()' type='text' class='btn btn-lg btn-default right center' ng-click='logOut()'><a href="/#/"></a>Logout</button>
 
+  <button ng-if='loggedIn()' type='text' class='btn btn-lg btn-default right center border' ng-click='logOut()'><a href="/#/"></a>Logout</button>
+
+<hr>
 
 
 

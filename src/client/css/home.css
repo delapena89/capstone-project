@@ -30,4 +30,8 @@ a {
   color: floralwhite;
 }
 
+.border {
+  border: 2px solid black;
+}
+
 
