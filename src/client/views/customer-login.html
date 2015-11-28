@@ -1,11 +1,40 @@
 <div ng-controller='registerCtrl'>
-  <h1>Customer Login</h1>
-  <input type='text' ng-model='customername' placeholder='Enter your name'>
-  <input type='text' ng-model='customerusername' placeholder='Enter your username'>
-  <input type='text' ng-model='customeremail' placeholder='Enter your email'>
-  <input type='text' ng-model='customerpassword' placeholder='Enter your password'>
 
-  <button type='submit' class='btn btn-default' ng-click='login()'>Login</button>
+  <div class='row'>
+    <div class='col-md-8'>
+      <h1>Customer Login</h1>
+    </div>
+  </div>
+
+  <div class='row'>
+
+    <div class='col-md-6 col-md-offset-3 background'>
+      <div class='form-group'>
+
+        <h2>Customer Name</h2>
+        <input type='text' ng-model='customername' class='form-control' placeholder='Enter your name'>
+        <h2>Customer Username</h2>
+        <input type='text' ng-model='customerusername' class='form-control' placeholder='Enter your username'>
+        <h2>Customer Email</h2>
+        <input type='text' ng-model='customeremail' class='form-control' placeholder='Enter your email'>
+        <h2>Customer Password</h2>
+        <input type='text' ng-model='customerpassword' class='form-control' placeholder='Enter your password'>
+
+        <br>
+        <br>
+
+        <button type='submit' class='btn btn-lg btn-primary' ng-click='login()'>Login</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
 
   <div ng-show='success'>
     <p class='alert alert-info' role='alert' id='message'>{{ message }}</p>
