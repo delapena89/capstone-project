@@ -1,14 +1,30 @@
 <div ng-controller='registerCtrl'>
+
+<div class='head'>
   <h1>Bearings</h1>
 
-  <li><a href="/#/register">Register</a></li>
-  <li><a href="/#/customer-login">Customer Login</a></li>
-  <li><a href="/#/admin-login">Admin Login</a></li>
+  <div class='btn-group'>
+    <a href="/#/" class='btn btn-lg btn-primary'>Home</a>
+<!--     <a href="/#/about" class='btn btn-lg btn-primary'>About</a>
+ -->    <a href="/#/products" class='btn btn-lg btn-primary'>Products</a>
+    <a href="/#/customer-service" class='btn btn-lg btn-primary'>Customer Service</a>
+    <a ng-if='loggedIn()' href="/#/order-history" class='btn btn-lg btn-primary'>Order History</a>
+    <a href="/#/shopping-cart" class='btn btn-lg btn-primary'>Shopping Cart</a>
+    <a href="/#/register" class='btn btn-lg btn-primary'>Register</a>
+    <a href="/#/customer-login" class='btn btn-lg btn-primary'>Customer Login</a>
+    <a href="/#/admin-register" class='btn btn-lg btn-primary'>Admin Login</a>
+  </div>
 
-  <button ng-if='loggedIn()' type='text' class='btn btn-default' ng-click='logOut()'><a href="/#/"></a>Logout</button>
-
-  <div ng-show='userName'>
-    <p>Welcome, {{ userName }}!</p>
+  <div ng-show='userName' class='right top-right color'>
+    <h3>Welcome, {{ userName }}!</h3>
   </div>
 
 </div>
+
+  <button ng-if='loggedIn()' type='text' class='btn btn-lg btn-default right center' ng-click='logOut()'><a href="/#/"></a>Logout</button>
+
+
+
+
+</div>
+

@@ -21,7 +21,10 @@ app.config(function($routeProvider) {
     .when('/customer-service', {
       templateUrl: 'views/customer-service.html'
     })
-    .when('checkout', {
+    .when('/checkout', {
       templateUrl: 'views/checkout.html'
+    })
+    .when('/admin-register', {
+      templateUrl: 'views/admin-register.html'
     });
 });

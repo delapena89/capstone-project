@@ -1,6 +1,7 @@
 // *** main dependencies *** //
 require('./models/product.js');
 require('./models/user.js');
+require('./models/admin.js');
 
 var express = require('express');
 var path = require('path');
@@ -17,6 +18,7 @@ var LocalStrategy = require('passport-local').Strategy;
 
 var Product = mongoose.model('products');
 var User = mongoose.model('users');
+var Admin = mongoose.model('admin');
 
 // passport config
 passport.use(new LocalStrategy(User.authenticate()));
@@ -28,7 +30,8 @@ passport.deserializeUser(User.deserializeUser());
 // *** routes *** //
 var routes = require('./routes/index.js');
 var productRoutes = require('./routes/product.js');
-var adminAndUserRoutes = require('./routes/user.js');
+var userRoutes = require('./routes/user.js');
+var adminRoutes = require('./routes/admin.js');
 
 
 // *** express instance *** //
@@ -71,7 +74,8 @@ app.use(passport.session());
 // *** main routes *** //
 app.use('/', routes);
 app.use('/products', productRoutes);
-app.use('/users', adminAndUserRoutes);
+app.use('/users', userRoutes);
+app.use('/admin', adminRoutes);
 
 
 

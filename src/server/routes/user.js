@@ -7,7 +7,7 @@ var local = require('passport-local');
 
 //user register function
 router.post('/register', function(req, res) {
-  var user = new User({name: req.body.name, username: req.body.username});
+  var user = new User({name: req.body.name, email: req.body.email, username: req.body.username});
   User.register(user, req.body.password, function(err, account) {
     if(err) {
       res.status(500).json({err: err});
@@ -73,6 +73,21 @@ router.get('/findByUsername/:username', function(req, res, next) {
 
   });
 });
+
+
+router.get('/findByEmail/:email', function(req, res, next) {
+  User.findOne({ email: req.params.email }, function (err, doc) {
+    // if ( doc ) {
+    //   res.send(true);
+    // } else {
+    //   res.send(false);
+    // }
+
+    doc ? res.send(true) : res.send(false);
+
+  });
+});
+
 
 
 

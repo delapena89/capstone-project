@@ -1,0 +1,33 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(http://www.psdgraphics.com/file/silver-diamond-plate.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%, 100%;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.right {
+  float: right;
+}
+
+.head {
+  margin-top: -55px;
+}
+
+.top-right {
+  margin-top: -55px;
+}
+
+.center {
+  margin-top: -45px;
+}
+
+.color {
+  color: floralwhite;
+}
+
+
