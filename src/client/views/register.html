@@ -6,6 +6,10 @@
     </div>
   </div>
 
+    <div ng-show="errors.length" ng-repeat='error in errors'>
+      <p class="alert alert-danger error" role="alert" id="message">{{ error }}</p>
+    </div>
+
   <div class='row'>
 
     <div class='col-md-6 col-md-offset-3 background'>
@@ -31,8 +35,5 @@
   </div>
 
 
-  <div ng-show="errors.length" ng-repeat='error in errors'>
-    <p class="alert alert-info" role="alert" id="message">{{ error }}</p>
-  </div>
 </div>
 
