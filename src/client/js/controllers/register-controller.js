@@ -7,7 +7,7 @@ app.controller('registerCtrl', ['$scope', '$rootScope', '$http', '$location', fu
       .then(function (res) {
         if (res.data) {
           console.log('username taken');
-          $scope.errors.push('username is taken, please try another one');
+          $scope.errors.push('Username is taken, please try another one');
         }
         else {
           console.log('free username!');
@@ -20,7 +20,7 @@ app.controller('registerCtrl', ['$scope', '$rootScope', '$http', '$location', fu
 
         if (res.data) {
          console.log('email taken');
-         $scope.errors.push("email is taken, please try another one");
+         $scope.errors.push("Email is taken, please try another one");
         } else {
           console.log('email is free!');
         }
