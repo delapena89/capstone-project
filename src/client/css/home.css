@@ -1,9 +1,9 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url(http://www.psdgraphics.com/file/silver-diamond-plate.jpg);
-  background-repeat: no-repeat;
-  background-size: 120%, 120%;
+  background-image: url(../img/sheet-metal-background.png);
+/*  background-repeat: no-repeat;
+*/  background-size: 120%, 120%;
 }
 
 a {
