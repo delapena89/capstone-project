@@ -6,6 +6,15 @@ app.config(function($routeProvider) {
     .when('/products', {
       templateUrl: 'views/products.html'
     })
+    .when('/customer-service', {
+      templateUrl: 'views/customer-service.html'
+    })
+    .when('/order-history', {
+      templateUrl: 'views/order-history.html'
+    })
+    .when('/shopping-cart', {
+      templateUrl: 'views/shopping-cart.html'
+    })
     .when('/register', {
       templateUrl: 'views/register.html'
     })
@@ -14,11 +23,5 @@ app.config(function($routeProvider) {
     })
     .when('/admin-login', {
       templateUrl: 'views/admin-login.html'
-    })
-    .when('/customer-service', {
-      templateUrl: 'views/customer-service.html'
-    })
-    .when('/shopping-cart', {
-      templateUrl: 'views/shopping-cart.html'
     });
 });
