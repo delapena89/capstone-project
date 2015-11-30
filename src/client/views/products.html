@@ -1,2 +1,16 @@
-<h1 class='color'>Products</h1>
-<p class='color'>This will do a get request to the database and will display all of the products in the db. There will be some filter option to make browser better for the customer</p>
+<div ng-controller='productCtrl'>
+  <h1 class='color'>Products</h1>
+  <p class='color'>This will do a get request to the database and will display all of the products in the db. There will be some filter option to make browser better for the customer</p>
+
+
+      <div class='cell' ng-repeat='product in products'>
+        <p>SKU:{{product.sku}}</p>
+        <p>Price:{{product.price | currency}}</p>
+        <p>Load Capacity: {{product.loadCapacity}}</p>
+        <p>Ball Material: {{product.ballMaterial}}</p>
+        <p>Housing Material: {{product.housingMaterial}}</p>
+      </div>
+
+
+
+</div>

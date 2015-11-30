@@ -23,7 +23,7 @@ router.post('/', function(req, res, next) {
 });
 
 // get all products
-router.get('/', function(req,res,next) {
+router.get('/products', function(req,res,next) {
   Product.findQ()
   .then(function(results) {
 res.json(results);
