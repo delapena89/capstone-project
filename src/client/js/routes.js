@@ -23,5 +23,8 @@ app.config(function($routeProvider) {
     })
     .when('/admin-login', {
       templateUrl: 'views/admin-login.html'
+    })
+    .when('/drop-in-style-ball-transfer', {
+      templateUrl: 'views/drop-in-style-ball-transfer.html'
     });
 });
