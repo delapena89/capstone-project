@@ -1,0 +1,29 @@
+<div ng-controller='registerCtrl'>
+
+<div class='head'>
+  <h1 class='color'> Denver Bearings</h1>
+
+  <div class='btn-group'>
+    <a href="/#/" class='btn btn-lg btn-success border'>Home</a>
+<!--     <a href="/#/about" class='btn btn-lg btn-success'>About</a>
+ -->    <a href="/#/products" class='btn btn-lg btn-success border'>Products</a>
+    <a href="/#/customer-service" class='btn btn-lg btn-success border'>Customer Service</a>
+    <a ng-if='loggedIn()' href="/#/order-history" class='btn btn-lg btn-success border'>Order History</a>
+    <a href="/#/shopping-cart" class='btn btn-lg btn-success border'>Shopping Cart</a>
+    <a href="/#/register" class='btn btn-lg btn-success border'>Register</a>
+    <a href="/#/customer-login" class='btn btn-lg btn-success border'>Customer Login</a>
+    <a href="/#/admin-register" class='btn btn-lg btn-success border'>Admin Login</a>
+  </div>
+
+  <div ng-show='userName' class='right top-right color'>
+    <h3>Welcome, {{ userName }}!</h3>
+  </div>
+
+</div>
+
+
+  <button ng-if='loggedIn()' type='text' class='btn btn-lg btn-default right center border' ng-click='logOut()'><a href="/#/"></a>Logout</button>
+
+<hr>
+
+</div>
