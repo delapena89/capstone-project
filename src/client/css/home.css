@@ -10,29 +10,29 @@ a {
   color: #00B7FF;
 }
 
-.right {
+/*.right {
   float: right;
-}
+}*/
 
-.head {
+/*.head {
   margin-top: -55px;
-}
+}*/
 
-.top-right {
+/*.top-right {
   margin-top: -55px;
-}
+}*/
 
-.center {
+/*.center {
   margin-top: -45px;
-}
+}*/
 
 .color {
   color: floralwhite;
 }
 
-.border {
+/*.border {
   border: 2px solid black;
-}
+}*/
 
 .ridge {
   border: 5px ridge lightblue;
@@ -48,7 +48,7 @@ a {
   margin-bottom: 50px;
 }
 
-h3 {
+h4 {
   width: 75%;
   margin-left: 175px;
   text-align: justify;

@@ -1,0 +1,23 @@
+.head {
+  margin-top: -55px;
+}
+
+.color {
+  color: floralwhite;
+}
+
+.border {
+  border: 2px solid black;
+}
+
+.right {
+  float: right;
+}
+
+.top-right {
+  margin-top: -55px;
+}
+
+.center {
+  margin-top: -45px;
+}
