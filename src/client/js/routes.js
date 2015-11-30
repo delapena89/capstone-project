@@ -6,9 +6,6 @@ app.config(function($routeProvider) {
     .when('/products', {
       templateUrl: 'views/products.html'
     })
-    .when('/add-product', {
-      templateUrl: 'views/add-product.html'
-    })
     .when('/register', {
       templateUrl: 'views/register.html'
     })
@@ -21,10 +18,7 @@ app.config(function($routeProvider) {
     .when('/customer-service', {
       templateUrl: 'views/customer-service.html'
     })
-    .when('/checkout', {
-      templateUrl: 'views/checkout.html'
-    })
-    .when('/admin-register', {
-      templateUrl: 'views/admin-register.html'
+    .when('/shopping-cart', {
+      templateUrl: 'views/shopping-cart.html'
     });
 });

@@ -39,39 +39,6 @@ app.controller('registerCtrl', ['$scope', '$rootScope', '$http', '$location', fu
       });
   };
 
-  // user register
-  // $scope.register = function () {
-  //   console.log($scope.customername, $scope.customerusername, $scope.customerpassword);
-  //   $http.get('/users/findByUsername/' + $scope.customerusername)
-  //   .then(function(res){
-  //   if (res.data) {
-  //     console.log('username is taken');
-  //     $scope.success = true;
-  //     $scope.message = 'Username is already taken, please try another one.';
-  //   } else {
-  //     $http.get('/users/findByEmail/' + $scope.customeremail)
-  //     .then(function(res){
-  //       if (res.data) {
-  //         console.log('email is already in use');
-  //         $scope.success = true;
-  //         $scope.message = "email is already in use";
-  //       } else {
-  //         $http.post('/users/register', {
-  //           name: $scope.customername,
-  //           username: $scope.customerusername,
-  //           password: $scope.customerpassword
-  //         }).then(function(data){
-  //           console.log(data);
-  //           $location.path('/customer-login');
-  //         });
-  //       }
-  //     })
-  //   }
-  // });
-
-
-  // };
-
 
   // user login
   $scope.login = function () {
