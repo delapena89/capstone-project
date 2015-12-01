@@ -2,51 +2,54 @@
   <h1 class='color'>Products</h1>
 
 <div class='row'>
-  <div class="btn-group" uib-dropdown is-open="status.isopenprice">
-    <button id="price" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Price <span class="caret"></span></button>
-      <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="price">
-        <li>$0-$20</li>
-        <li class="divider"></li>
-        <li>$20-$40</li>
-        <li class="divider"></li>
-        <li>$40-$60</li>
-        <li class="divider"></li>
-        <li>$60-Above</li>
-      </ul>
-  </div>
-  <div class="btn-group" uib-dropdown is-open="status.isopenloadCapacity">
-    <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Load Capacity<span class="caret"></span></button>
-      <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="loadCapacity">
-        <li>0-20 lbs</li>
-        <li class="divider"></li>
-        <li>21-40 lbs</li>
-        <li class="divider"></li>
-        <li>41-60 lbs</li>
-        <li class="divider"></li>
-        <li>61-80 lbs</li>
-      </ul>
-  </div>
-  <div class="btn-group" uib-dropdown is-open="status.isopenballMaterial">
-    <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Ball Material<span class="caret"></span></button>
-      <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="ballMaterial">
-        <li>Carbon Steel</li>
-        <li class="divider"></li>
-        <li>Nylon</li>
-        <li class="divider"></li>
-        <li>Stainless Steel</li>
-      </ul>
-  </div>
-  <div class="btn-group" uib-dropdown is-open="status.isopenhousingMaterial">
-    <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Housing Material<span class="caret"></span></button>
-      <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="housingMaterial">
-        <li>Carbon Steel</li>
-        <li class="divider"></li>
-        <li>Nylon</li>
-        <li class="divider"></li>
-        <li>Stainless Steel</li>
-      </ul>
-  </div>
+  <div class='col-md-6 col-md-offset-3'>
 
+    <div class="btn-group" uib-dropdown is-open="status.isopenprice">
+      <button id="price" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Price <span class="caret"></span></button>
+        <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="price">
+          <li>$0-$20</li>
+          <li class="divider"></li>
+          <li>$20-$40</li>
+          <li class="divider"></li>
+          <li>$40-$60</li>
+          <li class="divider"></li>
+          <li>$60-Above</li>
+        </ul>
+    </div>
+    <div class="btn-group" uib-dropdown is-open="status.isopenloadCapacity">
+      <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Load Capacity<span class="caret"></span></button>
+        <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="loadCapacity">
+          <li>0-20 lbs</li>
+          <li class="divider"></li>
+          <li>21-40 lbs</li>
+          <li class="divider"></li>
+          <li>41-60 lbs</li>
+          <li class="divider"></li>
+          <li>61-80 lbs</li>
+        </ul>
+    </div>
+    <div class="btn-group" uib-dropdown is-open="status.isopenballMaterial">
+      <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Ball Material<span class="caret"></span></button>
+        <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="ballMaterial">
+          <li>Carbon Steel</li>
+          <li class="divider"></li>
+          <li>Nylon</li>
+          <li class="divider"></li>
+          <li>Stainless Steel</li>
+        </ul>
+    </div>
+    <div class="btn-group" uib-dropdown is-open="status.isopenhousingMaterial">
+      <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Housing Material<span class="caret"></span></button>
+        <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="housingMaterial">
+          <li>Carbon Steel</li>
+          <li class="divider"></li>
+          <li>Nylon</li>
+          <li class="divider"></li>
+          <li>Stainless Steel</li>
+        </ul>
+    </div>
+
+  </div>
 </div>
 <br>
 <br>
