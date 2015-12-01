@@ -1,24 +1,71 @@
 <div ng-controller='productCtrl'>
   <h1 class='color'>Products</h1>
-  <p class='color'>This will do a get request to the database and will display all of the products in the db. There will be some filter option to make browser better for the customer</p>
 
 <div class='row'>
-<div class='col-xs-2 cell'>
-  Filters
-</div>
+  <div class="btn-group" uib-dropdown is-open="status.isopenprice">
+    <button id="price" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Price <span class="caret"></span></button>
+      <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="price">
+        <li>$0-$20</li>
+        <li class="divider"></li>
+        <li>$20-$40</li>
+        <li class="divider"></li>
+        <li>$40-$60</li>
+        <li class="divider"></li>
+        <li>$60-Above</li>
+      </ul>
+  </div>
+  <div class="btn-group" uib-dropdown is-open="status.isopenloadCapacity">
+    <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Load Capacity<span class="caret"></span></button>
+      <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="loadCapacity">
+        <li>0-20 lbs</li>
+        <li class="divider"></li>
+        <li>21-40 lbs</li>
+        <li class="divider"></li>
+        <li>41-60 lbs</li>
+        <li class="divider"></li>
+        <li>61-80 lbs</li>
+      </ul>
+  </div>
+  <div class="btn-group" uib-dropdown is-open="status.isopenballMaterial">
+    <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Ball Material<span class="caret"></span></button>
+      <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="ballMaterial">
+        <li>Carbon Steel</li>
+        <li class="divider"></li>
+        <li>Nylon</li>
+        <li class="divider"></li>
+        <li>Stainless Steel</li>
+      </ul>
+  </div>
+  <div class="btn-group" uib-dropdown is-open="status.isopenhousingMaterial">
+    <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Housing Material<span class="caret"></span></button>
+      <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="housingMaterial">
+        <li>Carbon Steel</li>
+        <li class="divider"></li>
+        <li>Nylon</li>
+        <li class="divider"></li>
+        <li>Stainless Steel</li>
+      </ul>
+  </div>
 
+</div>
+<br>
+<br>
+
+
+
+<div class='row'>
       <div class='col-md-3 cell' ng-repeat='product in products'>
         <img class='img' ng-src="{{product.image1}}">
-        <img class='img' ng-src="{{product.image2}}">
+        <!-- <img class='img' ng-src="{{product.image2}}"> -->
           <p class='parens'><strong>(pictures are only illustrative)</strong></p>
-          <p>id: {{product._id}}</p>
+          <!-- <p>id: {{product._id}}</p> -->
           <p>SKU: {{product.sku}}</p>
           <p>Price: {{product.price | currency}}</p>
           <p>Load Capacity: {{product.loadCapacity}}</p>
           <p>Ball Material: {{product.ballMaterial}}</p>
           <p>Housing Material: {{product.housingMaterial}}</p>
-          <p>Weight: {{product.weight}} lbs</p>
-          <p>{{product.description}}</p>
+          <!-- <p>Weight: {{product.weight}} lbs</p> -->
+          <!-- <p>{{product.description}}</p> -->
           <button class='btn btn-lg btn-primary'>Add to Cart</button>
           <button class='btn btn-lg btn-danger'>Details</button>
       </div>
