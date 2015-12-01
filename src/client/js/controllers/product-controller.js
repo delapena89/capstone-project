@@ -3,9 +3,8 @@ app.controller('productCtrl', ['$scope','httpService', '$location', function($sc
   console.log('it is working');
 
   $scope.addProduct = function() {
-    $scope.products = httpService.addProduct($scope.products);
+    $scope.products = httpService.addProduct($scope.product);
     $location.path('/products');
-    console.log($scope.product);
   };
 
   $scope.getProducts = function() {
