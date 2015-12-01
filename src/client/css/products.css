@@ -2,4 +2,14 @@
   background-color: lightblue;
   border:2px solid black;
   width: 20%;
+  padding: 10px;
+}
+
+.img {
+  height: 200px;
+  width: 200px;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  border: 1px solid black;
 }
