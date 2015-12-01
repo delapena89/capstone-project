@@ -8,8 +8,18 @@
 .img {
   height: 200px;
   width: 200px;
-  margin-left: 10%;
+  margin-left: 9%;
   margin-top: 2%;
   margin-bottom: 2%;
   border: 1px solid black;
 }
+
+.parens {
+  margin-left: 7%;
+}
+
+.align {
+  margin-left: 10%;
+}
+
+

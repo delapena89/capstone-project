@@ -2,17 +2,28 @@
   <h1 class='color'>Products</h1>
   <p class='color'>This will do a get request to the database and will display all of the products in the db. There will be some filter option to make browser better for the customer</p>
 
+<div class='row'>
+<div class='col-xs-2 cell'>
+  Filters
+</div>
 
-      <div class='cell' ng-repeat='product in products'>
+      <div class='col-md-3 cell' ng-repeat='product in products'>
+        <img class='img' ng-src="{{product.image1}}">
         <img class='img' ng-src="{{product.image2}}">
-        <p>id: {{product._id}}</p>
-        <p>SKU:{{product.sku}}</p>
-        <p>Price:{{product.price | currency}}</p>
-        <p>Load Capacity: {{product.loadCapacity}}</p>
-        <p>Ball Material: {{product.ballMaterial}}</p>
-        <p>Housing Material: {{product.housingMaterial}}</p>
-        <button class='btn btn-primary'>Add to Cart</button>
+          <p class='parens'><strong>(pictures are only illustrative)</strong></p>
+          <p>id: {{product._id}}</p>
+          <p>SKU: {{product.sku}}</p>
+          <p>Price: {{product.price | currency}}</p>
+          <p>Load Capacity: {{product.loadCapacity}}</p>
+          <p>Ball Material: {{product.ballMaterial}}</p>
+          <p>Housing Material: {{product.housingMaterial}}</p>
+          <p>Weight: {{product.weight}} lbs</p>
+          <p>{{product.description}}</p>
+          <button class='btn btn-lg btn-primary'>Add to Cart</button>
+          <button class='btn btn-lg btn-danger'>Details</button>
       </div>
+</div>
+
 
 
 

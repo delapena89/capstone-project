@@ -8,6 +8,7 @@ var Product = new Schema({
   ballMaterial: String,
   housingMaterial: String,
   description: String,
+  weight: Number,
   image1: String,
   image2: String
 });

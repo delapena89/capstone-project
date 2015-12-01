@@ -12,6 +12,7 @@ router.post('/', function(req, res, next) {
     ballMaterial: req.body.ballMaterial,
     housingMaterial: req.body.housingMaterial,
     description: req.body.description,
+    weight: req.body.weight,
     image1: req.body.image1,
     image2: req.body.image2
   }).saveQ()

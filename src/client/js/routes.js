@@ -41,6 +41,9 @@ app.config(function($routeProvider) {
     })
     .when('/stud-mounted-ball-transfer', {
       templateUrl: 'views/stud-mounted-ball-transfer.html'
+    })
+    .when('/add-products', {
+      templateUrl: 'views/add-products.html'
     });
 
 });
