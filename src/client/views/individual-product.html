@@ -1,24 +1,36 @@
 <div class="modal-content">
   <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h4 class="modal-title">{{ selectedProduct.sku }}</h4>
+    <h1 class="modal-title headerAlign">{{ selectedProduct.sku }}</h1>
   </div>
-  <div class="modal-body">
-    <img class='img' ng-src="{{selectedProduct.image1}}">
-    <img class='img' ng-src="{{selectedProduct.image2}}">
-    <p class='parens'><strong>(pictures are only illustrative)</strong></p>
-    <p>Type: {{selectedProduct.type}}</p>
-    <!-- <p>id: {{selectedProduct._id}}</p> -->
-    <p>SKU: {{selectedProduct.sku}}</p>
-    <p>Price: {{selectedProduct.price | currency}}</p>
-    <p>Load Capacity: {{selectedProduct.loadCapacity}}</p>
-    <p>Ball Material: {{selectedProduct.ballMaterial}}</p>
-    <p>Housing Material: {{selectedProduct.housingMaterial}}</p>
-    <p>Weight: {{selectedProduct.weight}} lbs</p>
-    <p>{{selectedProduct.description}}</p>
-  </div>
+
+
+      <div class="modal-body">
+        <img class='imgModal1 modalPlacementOne ridge' ng-src="{{selectedProduct.image1}}">
+        <a target="_blank" href="{{selectedProduct.image2}}">
+          <img class='imgModal2' ng-src="{{selectedProduct.image2}}">
+        </a>
+        <div class='row'>
+          <div class='col-md-6'>
+            <h4><strong>Type:</strong> {{selectedProduct.type}}</h4>
+            <!-- <p>id: {{selectedProduct._id}}</p> -->
+            <h4><strong>SKU:</strong> {{selectedProduct.sku}}</h4>
+            <h4><strong>Price:</strong> {{selectedProduct.price | currency}}</h4>
+          </div>
+          <div class='col-md-6'>
+            <h4><strong>Load Capacity:</strong> {{selectedProduct.loadCapacity}}</h4>
+            <h4><strong>Ball Material:</strong> {{selectedProduct.ballMaterial}}</h4>
+            <h4><strong>Housing Material:</strong> {{selectedProduct.housingMaterial}}</h4>
+            <h4><strong>Weight:</strong> {{selectedProduct.weight}} lbs</h4>
+            <br>
+            <br>
+          </div>
+        </div>
+        <h4>{{selectedProduct.description}}</h4>
+      </div>
+
+
   <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click='closeModal()'>Close</button>
-    <button type="button" class="btn btn-primary">Add to Cart</button>
+    <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click='closeModal()'>Close</button>
+    <button type="button" class="btn btn-success">Add to Cart</button>
   </div>
 </div><!-- /.modal-content -->
