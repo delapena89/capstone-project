@@ -23,6 +23,13 @@ app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal',
     });
   };
 
+  $scope.pushToShoppingCart = function(id) {
+    httpService.pushToShoppingCart(id)
+    .success(function(response) {
+      console.log(response);
+    });
+  };
+
   $scope.status = {
     isopen: false
   };

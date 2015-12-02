@@ -10,14 +10,14 @@
           <img class='imgModal2' ng-src="{{selectedProduct.image2}}">
         </a>
         <div class='row'>
-          <div class='col-md-6'>
+          <div class='col-md-6 push-text'>
             <h4><strong>Type:</strong> {{selectedProduct.type}}</h4>
             <!-- <p>id: {{selectedProduct._id}}</p> -->
             <h4><strong>SKU:</strong> {{selectedProduct.sku}}</h4>
             <h4><strong>Price:</strong> {{selectedProduct.price | currency}}</h4>
           </div>
-          <div class='col-md-6'>
-            <h4><strong>Load Capacity:</strong> {{selectedProduct.loadCapacity}}</h4>
+          <div class='col-md-6 push-text'>
+            <h4><strong>Load Capacity:</strong> {{selectedProduct.loadCapacity}} lbs</h4>
             <h4><strong>Ball Material:</strong> {{selectedProduct.ballMaterial}}</h4>
             <h4><strong>Housing Material:</strong> {{selectedProduct.housingMaterial}}</h4>
             <h4><strong>Weight:</strong> {{selectedProduct.weight}} lbs</h4>

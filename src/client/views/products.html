@@ -1,53 +1,74 @@
 <div ng-controller='productCtrl'>
   <h1 class='color'>Products</h1>
 
-<div class='row'>
-  <div class='col-md-6 col-md-offset-3'>
+<div class='row push-middle'>
+  <div class='col-md-8 col-md-offset-2'>
 
 
-
+    <div class="btn-group" uib-dropdown is-open="status.isopentype">
+      <button id="price" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Type  <span class="caret"></span></button>
+        <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="type">
+          <li class='headerAlign'>Flange Mounted</li>
+          <li class="divider"></li>
+          <li class='headerAlign'>Flangeless</li>
+          <li class="divider"></li>
+          <li class='headerAlign'>Stud Mounted</li>
+          <li class="divider"></li>
+          <li class='headerAlign padding'>Stud Mounted Machine</li>
+          <li class="divider"></li>
+          <li class='headerAlign'>Stud Mounted Heavy Duty</li>
+          <li class="divider"></li>
+          <li class='headerAlign'>Pipe Mounted</li>
+          <li class="divider"></li>
+          <li class='headerAlign'>Drop In</li>
+          <li class="divider"></li>
+          <li class='headerAlign'>Drop In Heavy Duty</li>
+          <li class="divider"></li>
+          <li class='headerAlign'>Flying Saucer</li>
+        </ul>
+    </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenprice">
       <button id="price" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Price  <span class="caret"></span></button>
         <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="price">
-          <li>$0-$20</li>
+          <li class='headerAlign'>$0-$20</li>
           <li class="divider"></li>
-          <li>$20-$40</li>
+          <li class='headerAlign'>$20-$40</li>
           <li class="divider"></li>
-          <li>$40-$60</li>
+          <li class='headerAlign'>$40-$60</li>
           <li class="divider"></li>
-          <li>$60-Above</li>
+          <li class='headerAlign'>$60-Above</li>
         </ul>
     </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenloadCapacity">
       <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Load Capacity  <span class="caret"></span></button>
         <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="loadCapacity">
-          <li>0-20 lbs</li>
+          <li class='headerAlign'>0-20 lbs</li>
           <li class="divider"></li>
-          <li>21-40 lbs</li>
+          <li class='headerAlign'>21-40 lbs</li>
           <li class="divider"></li>
-          <li>41-60 lbs</li>
+          <li class='headerAlign'>41-60 lbs</li>
           <li class="divider"></li>
-          <li>61-80 lbs</li>
+          <li class='headerAlign'>61-80 lbs</li>
         </ul>
     </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenballMaterial">
       <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Ball Material  <span class="caret"></span></button>
         <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="ballMaterial">
-          <li>Carbon Steel</li>
+          <li class='headerAlign'>Carbon Steel</li>
           <li class="divider"></li>
-          <li>Nylon</li>
+          <li class='headerAlign'>Nylon</li>
           <li class="divider"></li>
-          <li>Stainless Steel</li>
+          <li class='headerAlign'>Stainless Steel</li>
         </ul>
     </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenhousingMaterial">
       <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Housing Material  <span class="caret"></span></button>
         <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="housingMaterial">
-          <li>Carbon Steel</li>
+          <li class='headerAlign'>Carbon Steel</li>
           <li class="divider"></li>
-          <li>Nylon</li>
+          <li class='headerAlign'>Nylon</li>
           <li class="divider"></li>
-          <li>Stainless Steel</li>
+          <li class='headerAlign'>Stainless Steel</li>
         </ul>
     </div>
 
@@ -72,8 +93,10 @@
           <p>Housing Material: {{product.housingMaterial}}</p>
           <!-- <p>Weight: {{product.weight}} lbs</p> -->
           <!-- <p>{{product.description}}</p> -->
-          <button class='btn btn-lg btn-primary'>Add to Cart</button>
-          <button class='btn btn-lg btn-danger' ng-click='getSingleProduct(product._id); openModal()'>Details</button>
+          <div class='row button-padding'>
+            <button class='btn btn-lg btn-primary' ng-click='pushToShoppingCart(product._id)'>Add to Cart</button>
+            <button class='btn btn-lg btn-danger' ng-click='getSingleProduct(product._id); openModal()'>Details</button>
+          </div>
       </div>
 </div>
 

@@ -5,7 +5,8 @@ function httpService($http) {
   var factory = {
     addProduct: addProduct,
     getProducts: getProducts,
-    getSingleProduct: getSingleProduct
+    getSingleProduct: getSingleProduct,
+    pushToShoppingCart: pushToShoppingCart
   };
 
   return factory;
@@ -27,6 +28,10 @@ function httpService($http) {
     console.log('click');
     console.log(id);
     return $http.get('/products/products/' + id);
+  }
+
+  function pushToShoppingCart(id) {
+    console.log('click');
   }
 
 
