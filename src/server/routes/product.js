@@ -35,7 +35,8 @@ res.json(results);
 });
 
 // get single product
-router.get('/:id', function(req, res, next) {
+router.get('/products/:id', function(req, res, next) {
+  console.log(req.params.id);
   Product.findByIdQ(req.params.id)
   .then(function(response) {
     res.json(response);

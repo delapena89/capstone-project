@@ -25,6 +25,8 @@ function httpService($http) {
 
   function getSingleProduct(id) {
     console.log('click');
+    console.log(id);
+    return $http.get('/products/products/' + id);
   }
 
 

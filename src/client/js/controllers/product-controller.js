@@ -15,6 +15,14 @@ app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal',
     });
   };
 
+  $scope.getSingleProduct = function(id) {
+    httpService.getSingleProduct(id)
+    .success(function(response) {
+      console.log(response);
+      $scope.product = response;
+    });
+  };
+
   $scope.status = {
     isopen: false
   };
