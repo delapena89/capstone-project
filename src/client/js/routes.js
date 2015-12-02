@@ -44,6 +44,9 @@ app.config(function($routeProvider) {
     })
     .when('/add-products', {
       templateUrl: 'views/add-products.html'
+    })
+    .when('/individual-product', {
+      templateUrl: 'views/individual-product.html'
     });
 
 });

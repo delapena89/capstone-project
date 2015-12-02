@@ -1,4 +1,4 @@
-app.controller('productCtrl', ['$scope','httpService', '$location', function($scope, httpService, $location) {
+app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal', function($scope, httpService, $location, $uibModal) {
 
   console.log('it is working');
 
@@ -24,6 +24,17 @@ app.controller('productCtrl', ['$scope','httpService', '$location', function($sc
     $event.stopPropagation();
     $scope.status.isopen = !$scope.status.isopen;
   };
+
+  $scope.openModal = function () {
+           var modalInstance = $uibModal.open({
+              templateUrl: 'views/individual-product.html',
+              controller: 'modalCtrl',
+              size: 'sm',
+              backdrop: 'static'
+            });
+          };
+
+
 
 
 

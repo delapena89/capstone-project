@@ -4,7 +4,8 @@ httpService.$inject = ['$http'];
 function httpService($http) {
   var factory = {
     addProduct: addProduct,
-    getProducts: getProducts
+    getProducts: getProducts,
+    getSingleProduct: getSingleProduct
   };
 
   return factory;
@@ -22,4 +23,16 @@ function httpService($http) {
     return $http.get('/products/products');
   }
 
+  function getSingleProduct(id) {
+    console.log('click');
+  }
+
+
 }
+
+
+
+
+
+
+
