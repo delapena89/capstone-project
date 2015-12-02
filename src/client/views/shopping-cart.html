@@ -2,4 +2,21 @@
 
 <p class='color'>This page will show the items that the customer has selected and have a check out button the will lead to the checkout page</p>
 
-<h1>{{ selectedProduct.sku }}</h1>
+<div ng-controller='productCtrl'>
+  addToCartProduct: {{ addToCartProduct }}
+  <div class='row'>
+        <div class='col-md-3 cell' ng-repeat='addToCartProduct in addToCartProducts'>
+          <img class='img' ng-src="{{product.image1}}">
+          <img class='img' ng-src="{{product.image2}}">
+            <p>Type: {{product.type}}</p>
+            <p>id: {{product._id}}</p>
+            <p>SKU: {{product.sku}}</p>
+            <p>Price: {{product.price | currency}}</p>
+            <p>Load Capacity: {{product.loadCapacity}}</p>
+            <p>Ball Material: {{product.ballMaterial}}</p>
+            <p>Housing Material: {{product.housingMaterial}}</p>
+            <p>Weight: {{product.weight}} lbs</p>
+            <p>{{product.description}}</p>
+        </div>
+  </div>
+</div>

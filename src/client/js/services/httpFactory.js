@@ -32,6 +32,8 @@ function httpService($http) {
 
   function pushToShoppingCart(id) {
     console.log('click');
+    console.log(id);
+    return $http.get('/products/products/' + id);
   }
 
 
