@@ -1,4 +1,4 @@
-app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal', function($scope, httpService, $location, $uibModal) {
+app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal', '$rootScope', function($scope, httpService, $location, $uibModal, $rootScope) {
 
   console.log('it is working');
 
@@ -19,7 +19,7 @@ app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal',
     httpService.getSingleProduct(id)
     .success(function(response) {
       console.log(response);
-      $scope.product = response;
+      $rootScope.selectedProduct = response;
     });
   };
 
@@ -37,11 +37,10 @@ app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal',
            var modalInstance = $uibModal.open({
               templateUrl: 'views/individual-product.html',
               controller: 'modalCtrl',
-              size: 'sm',
+              size: 'lg',
               backdrop: 'static'
             });
           };
-
 
 
 
