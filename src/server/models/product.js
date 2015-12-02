@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var Product = new Schema({
+  type: {type: String},
   sku: String,
   price: Number,
   loadCapacity: String,

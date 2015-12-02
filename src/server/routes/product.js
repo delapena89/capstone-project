@@ -6,6 +6,7 @@ var Product = mongoose.model('products');
 // post single product
 router.post('/', function(req, res, next) {
   newProduct = new Product({
+    type: req.body.type,
     sku: req.body.sku,
     price: req.body.price,
     loadCapacity: req.body.loadCapacity,
