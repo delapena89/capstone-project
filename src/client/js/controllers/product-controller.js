@@ -1,7 +1,7 @@
 app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal', '$rootScope', function($scope, httpService, $location, $uibModal, $rootScope) {
 
   console.log('it is working');
-  var orderHistory = [];
+  $rootScope.orderHistory = [];
 
   $scope.addProduct = function() {
     $scope.products = httpService.addProduct($scope.product);
@@ -29,8 +29,8 @@ app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal',
     .success(function(response) {
       console.log(response);
       var addToCartProduct = response;
-      orderHistory.push(addToCartProduct);
-      console.log(orderHistory);
+      $rootScope.orderHistory.push(addToCartProduct);
+      console.log($rootScope.orderHistory);
     });
   };
 
