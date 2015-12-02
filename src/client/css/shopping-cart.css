@@ -1,17 +1,13 @@
 .cell1 {
   background-color: lightblue;
   border:2px solid black;
-  padding-bottom: 133px;
+  padding-bottom: 15px;
 }
 
 .cell2 {
   background-color: lightblue;
   border:2px solid black;
-  padding-bottom: 104px;
+  padding-bottom: 155px;
 }
 
-.cell3 {
-  background-color: lightblue;
-  border:2px solid black;
-  padding-bottom: 191px;
-}
+
