@@ -48,6 +48,9 @@ app.config(function($routeProvider) {
     })
     .when('/individual-product', {
       templateUrl: 'views/individual-product.html'
+    })
+    .when('/checkout', {
+      templateUrl: 'views/checkout.html'
     });
 
 });

@@ -6,6 +6,7 @@ function httpService($http) {
     addProduct: addProduct,
     getProducts: getProducts,
     getSingleProduct: getSingleProduct,
+    submitOrder: submitOrder,
     // pushToShoppingCart: pushToShoppingCart
   };
 
@@ -28,6 +29,17 @@ function httpService($http) {
     console.log('click');
     console.log(id);
     return $http.get('/products/products/' + id);
+  }
+
+  function submitOrder(payload) {
+    return $http.post('/products/checkout', payload)
+    .then(function(response) {
+      console.log('click');
+      console.log(payload);
+      console.log(response.data);
+      return response.data;
+    });
+
   }
 
   // function pushToShoppingCart(id) {
