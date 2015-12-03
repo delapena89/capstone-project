@@ -6,7 +6,7 @@ function httpService($http) {
     addProduct: addProduct,
     getProducts: getProducts,
     getSingleProduct: getSingleProduct,
-    pushToShoppingCart: pushToShoppingCart
+    // pushToShoppingCart: pushToShoppingCart
   };
 
   return factory;
@@ -30,11 +30,11 @@ function httpService($http) {
     return $http.get('/products/products/' + id);
   }
 
-  function pushToShoppingCart(id) {
-    console.log('click');
-    console.log(id);
-    return $http.get('/products/products/' + id);
-  }
+  // function pushToShoppingCart(id) {
+  //   console.log('click');
+  //   console.log(id);
+  //   return $http.get('/products/products/' + id);
+  // }
 
 
 }

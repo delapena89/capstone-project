@@ -1,1 +1,1 @@
-var app = angular.module('capstone', ['ngRoute', 'ngAnimate', 'ui.bootstrap']);
+var app = angular.module('capstone', ['ngRoute', 'ui.bootstrap']);

@@ -13,7 +13,8 @@ app.config(function($routeProvider) {
       templateUrl: 'views/order-history.html'
     })
     .when('/shopping-cart', {
-      templateUrl: 'views/shopping-cart.html'
+      templateUrl: 'views/shopping-cart.html',
+      controller: 'shoppingCtrl'
     })
     .when('/register', {
       templateUrl: 'views/register.html'

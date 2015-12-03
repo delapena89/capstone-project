@@ -7,7 +7,14 @@
 .cell2 {
   background-color: lightblue;
   border:2px solid black;
-  padding-bottom: 155px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.checkout-button {
+  margin-left: 145px;
+  margin-top: 128px;
+  margin-bottom: 5px;
 }
 
 

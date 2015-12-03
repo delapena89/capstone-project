@@ -1,7 +1,7 @@
-app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal', '$rootScope', function($scope, httpService, $location, $uibModal, $rootScope) {
+app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal', '$rootScope', 'cartService', function($scope, httpService, $location, $uibModal, $rootScope, cartService) {
 
   console.log('it is working');
-  $rootScope.orderHistory = [];
+  $scope.orderHistory = cartService.getCart();
 
   $scope.addProduct = function() {
     $scope.products = httpService.addProduct($scope.product);
@@ -20,19 +20,18 @@ app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal',
     httpService.getSingleProduct(id)
     .success(function(response) {
       console.log(response);
-      $rootScope.selectedProduct = response;
+      $rootScope.product = response;
     });
   };
 
-  $scope.pushToShoppingCart = function(id) {
-    httpService.pushToShoppingCart(id)
-    .success(function(response) {
-      console.log(response);
-      var addToCartProduct = response;
-      $rootScope.orderHistory.push(addToCartProduct);
-      console.log($rootScope.orderHistory);
-    });
-  };
+  $scope.pushToShoppingCart = function(product) {
+    // httpService.pushToShoppingCart(id)
+    // .success(function(response) {
+    //   console.log(response);
+      // var addToCartProduct = response;
+      $scope.orderHistory.push(product);
+      console.log(cartService.getCart());
+    };
 
   $scope.status = {
     isopen: false

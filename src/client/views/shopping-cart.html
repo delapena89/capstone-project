@@ -1,20 +1,21 @@
-<div class='row col-sm-offset-1'>
+<div ng-repeat='order in orderHistory' class='row col-sm-offset-1'>
+
       <div class='col-sm-3 cell ridge'>
-        <img class='img' ng-src="{{ orderHistory[0].image1 }}">
+        <img class='img' ng-src="{{ order.image1 }}">
       </div>
       <div class='col-sm-5 cell1'>
-          <h4><strong>Type:</strong> {{orderHistory[0].type}}</p>
+          <h4><strong>Type:</strong> {{order.type}}</p>
           <!-- <p>id: {{product._id}}</p> -->
-          <h4>SKU: {{orderHistory[0].sku}}</h4>
-          <h4>Price: {{orderHistory[0].price | currency}}</h4>
-          <h4>Load Capacity: {{orderHistory[0].loadCapacity}}</h4>
-          <h4>Ball Material: {{orderHistory[0].ballMaterial}}</h4>
-          <h4>Housing Material: {{orderHistory[0].housingMaterial}}</h4>
-          <h4>Weight: {{orderHistory[0].weight}} lbs</h4>
+          <h4>SKU: {{order.sku}}</h4>
+          <h4>Price: {{order.price | currency}}</h4>
+          <h4>Load Capacity: {{order.loadCapacity}}</h4>
+          <h4>Ball Material: {{order.ballMaterial}}</h4>
+          <h4>Housing Material: {{order.housingMaterial}}</h4>
+          <h4>Weight: {{order.weight}} lbs</h4>
       </div>
       <div class='col-sm-3 cell2'>
         <h4>Quantity</h4>
-        <button class='btn btn-success'>CHECKOUT</button>
+        <button class='btn btn-lg btn-success checkout-button' ng-click='checkout()'>CHECKOUT</button>
       </div>
 
 </div>
