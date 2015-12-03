@@ -7,14 +7,27 @@
 .cell2 {
   background-color: lightblue;
   border:2px solid black;
-  padding-bottom: 10px;
+  padding-top: 45px;
+  padding-bottom: 36px;
   text-align: center;
 }
 
-.checkout-button {
-  margin-left: 145px;
-  margin-top: 128px;
-  margin-bottom: 5px;
+.width {
+  width: 20%;
 }
+
+.shopBackground {
+  background-color: lightblue;
+  border: 2px solid black;
+  margin-left: 90px;
+  margin-top: 20px;
+}
+
+.checkout {
+  margin-left: 975px;
+  margin-bottom: 20px;
+}
+
+
 
 

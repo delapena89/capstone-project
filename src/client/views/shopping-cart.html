@@ -1,24 +1,40 @@
 <div ng-repeat='order in orderHistory' class='row col-sm-offset-1'>
 
-      <div class='col-sm-3 cell ridge'>
-        <img class='img' ng-src="{{ order.image1 }}">
-      </div>
-      <div class='col-sm-5 cell1'>
-          <h4><strong>Type:</strong> {{order.type}}</p>
-          <!-- <p>id: {{product._id}}</p> -->
-          <h4>SKU: {{order.sku}}</h4>
-          <h4>Price: {{order.price | currency}}</h4>
-          <h4>Load Capacity: {{order.loadCapacity}}</h4>
-          <h4>Ball Material: {{order.ballMaterial}}</h4>
-          <h4>Housing Material: {{order.housingMaterial}}</h4>
-          <h4>Weight: {{order.weight}} lbs</h4>
-      </div>
-      <div class='col-sm-3 cell2'>
-        <h4>Quantity</h4>
-        <button class='btn btn-lg btn-success checkout-button' ng-click='checkout()'>CHECKOUT</button>
-      </div>
+  <div class='col-sm-3 cell ridge'>
+    <img class='img' ng-src="{{ order.image1 }}">
+  </div>
+    <div class='col-sm-5 cell1'>
+        <h4><strong>Type:</strong> {{order.type}}</p>
+        <!-- <p>id: {{product._id}}</p> -->
+        <h4>SKU: {{order.sku}}</h4>
+        <h4>Unit Price: {{order.price | currency}}</h4>
+        <h4>Load Capacity: {{order.loadCapacity}}</h4>
+        <h4>Ball Material: {{order.ballMaterial}}</h4>
+        <h4>Housing Material: {{order.housingMaterial}}</h4>
+        <h4>Weight: {{order.weight}} lbs</h4>
+    </div>
+    <div class='col-sm-3 cell2'>
+      <h4>Quantity</h4>
+      <input class='width' type='number' step='1' ng-init='totalValue = 1' ng-model='totalValue'>
+      <h4>Total Price: {{ order.price * totalValue | currency }}</h4>
+      <button class='btn btn-lg btn-danger checkout-button' ng-click='remove()'>REMOVE</button>
+    </div>
+
 
 </div>
+
+<div class='row'>
+  <div class='col-md-10 shopBackground'>
+    <h2>Shipping Info</h2>
+    <p>UPS Ground:</p>
+    <p>UPS Next Day Air</p>
+    <p>UPS 3 day select</p>
+    <button class='btn btn-lg btn-success checkout' ng-click='checkout()'>CHECKOUT</button>
+  </div>
+</div>
+
+
+
 
 
 
