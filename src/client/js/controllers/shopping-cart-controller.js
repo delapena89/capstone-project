@@ -8,4 +8,8 @@ app.controller('shoppingCtrl', ['$scope','httpService','$rootScope','cartService
     console.log($scope.orderHistory);
   };
 
+  $scope.remove = function (index) {
+    $scope.orderHistory.splice(index, 1);
+  };
+
 }]);
