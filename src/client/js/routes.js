@@ -16,7 +16,7 @@ app.config(function($routeProvider) {
       templateUrl: 'views/shopping-cart.html',
       controller: 'shoppingCtrl'
     })
-    .when('/register', {
+    .when('/sign-up', {
       templateUrl: 'views/register.html'
     })
     .when('/customer-login', {

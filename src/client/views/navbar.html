@@ -10,9 +10,9 @@
     <a href="/#/customer-service" class='btn btn-lg btn-success border'>Customer Service</a>
     <a ng-if='loggedIn()' href="/#/order-history" class='btn btn-lg btn-success border'>Order History</a>
     <a href="/#/shopping-cart" class='btn btn-lg btn-success border'>Shopping Cart</a>
-    <a href="/#/register" class='btn btn-lg btn-success border'>Register</a>
-    <a href="/#/customer-login" class='btn btn-lg btn-success border'>Customer Login</a>
-    <a href="/#/admin-login" class='btn btn-lg btn-success border'>Admin Login</a>
+    <a ng-if='!loggedIn()' href="/#/sign-up" class='btn btn-lg btn-success border'>Sign-Up</a>
+    <a ng-if='!loggedIn()' href="/#/customer-login" class='btn btn-lg btn-success border'>Customer Login</a>
+    <!-- <a href="/#/admin-login" class='btn btn-lg btn-success border'>Admin Login</a> -->
   </div>
 
   <div ng-show='userName' class='right top-right color'>
