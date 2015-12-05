@@ -51,6 +51,10 @@ app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal',
     'Nylon',
     'Stainless Steel'
   ];
+  $scope.housingMaterial = [
+    'Carbon Steel',
+    'Stainless Steel'
+  ];
 
   $scope.addProduct = function() {
     $scope.products = httpService.addProduct($scope.product);

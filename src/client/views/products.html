@@ -40,13 +40,9 @@
         </ul>
     </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenhousingMaterial">
-      <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Housing Material  <span class="caret"></span></button>
-        <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="housingMaterial">
-          <li class='headerAlign'>Carbon Steel</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>Nylon</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>Stainless Steel</li>
+      <button id="housingMaterial" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Housing Material  <span class="caret"></span></button>
+        <ul ng-model='housingMaterial' class="uib-dropdown-menu" aria-labelledby="housingMaterial">
+          <li ng-repeat='house in housingMaterial track by $index'><span ng-click="filter('housingMaterial', house)">{{ house }}</span></li>
         </ul>
     </div>
 
