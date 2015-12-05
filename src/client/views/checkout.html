@@ -1,85 +1,144 @@
-
 <div ng-controller='shoppingCtrl'>
+    <div class="container">
+        <div>
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-2">
+                    <h1 class='color'>Customer Checkout</h1>
+                </div>
+            </div>
+<!-- Bill To Info -->
 <div class='row'>
-  <div class='col-md-8'>
-    <h1 class='color'>Customer Checkout</h1>
-  </div>
-</div>
-
-<div class='row'>
-
-  <div class='col-md-6 col-md-offset-3 background'>
-    <div class='form-group'>
+  <div class='col-md-6 background'>
     <h1>Bill To Info</h1>
+    <div class='form-group'>
         <h2>First Name</h2>
         <input type='text' ng-model='customername' class='form-control' placeholder='Enter your name'>
+    </div>
+    <div class='form-group'>
         <h2>Last Name</h2>
         <input type='text' ng-model='customernamelast' class='form-control' placeholder='Enter your username'>
+    </div>
+    <div class='form-group'>
         <h2>Company</h2>
         <input type='text' ng-model='customercompany' class='form-control' placeholder='Enter your email'>
+    </div>
+    <div class='form-group'>
         <h2>Address</h2>
         <input type='text' ng-model='customeraddress' class='form-control' placeholder='Enter your password'>
+    </div>
+    <div class='form-group'>
         <h2>City</h2>
         <input type='text' ng-model='customercity' class='form-control' placeholder='Enter your password'>
+    </div>
+    <div class='form-group'>
         <h2>State</h2>
         <input type='text' ng-model='customerstate' class='form-control' placeholder='Enter your password'>
+    </div>
+    <div class='form-group'>
         <h2>Postal Code</h2>
         <input type='text' ng-model='customerpostalcode' class='form-control' placeholder='Enter your password'>
+    </div>
+    <div class='form-group'>
         <h2>Country</h2>
         <input type='text' ng-model='customercountry' class='form-control' placeholder='Enter your password'>
+    </div>
+    <div class='form-group'>
         <h2>Phone:</h2>
         <input type='text' ng-model='customerphone' class='form-control' placeholder='Enter your password'>
+    </div>
+    <div class='form-group'>
         <h2>Email Address</h2>
         <input type='text' ng-model='customeremail' class='form-control' placeholder='Enter your password'>
-      </div>
     </div>
-  </div>
-
-  <div class='col-md-6 col-md-offset-3 background'>
-    <div class='form-group'>
+</div>
+<!-- Ship To Info -->
+  <div class='col-md-6 background'>
     <h1>Ship To Info</h1>
-        <h2>First Name</h2>
-        <input type='text' ng-model='shipcustomername' class='form-control' placeholder='Enter your name'>
-        <h2>Last Name</h2>
-        <input type='text' ng-model='shipcustomelastname' class='form-control' placeholder='Enter your username'>
-        <h2>Company</h2>
-        <input type='text' ng-model='shipcustomercompany' class='form-control' placeholder='Enter your email'>
-        <h2>Address</h2>
-        <input type='text' ng-model='shipcustomeraddress' class='form-control' placeholder='Enter your password'>
-        <h2>City</h2>
-        <input type='text' ng-model='shipcustomercity' class='form-control' placeholder='Enter your password'>
-        <h2>State</h2>
-        <input type='text' ng-model='shipcustomerstate' class='form-control' placeholder='Enter your password'>
-        <h2>Postal Code</h2>
-        <input type='text' ng-model='shipcustomerpostal' class='form-control' placeholder='Enter your password'>
-        <h2>Country</h2>
-        <input type='text' ng-model='shipcustomercountry' class='form-control' placeholder='Enter your password'>
-        <h2>Phone:</h2>
-        <input type='text' ng-model='shipcustomerphone' class='form-control' placeholder='Enter your password'>
-      </div>
+        <div class='form-group'>
+            <h2>First Name</h2>
+            <input type='text' ng-model='shipcustomername' class='form-control' placeholder='Enter your name'>
+        </div>
+        <div class='form-group'>
+            <h2>Last Name</h2>
+            <input type='text' ng-model='shipcustomelastname' class='form-control' placeholder='Enter your username'>
+        </div>
+        <div class='form-group'>
+            <h2>Company</h2>
+            <input type='text' ng-model='shipcustomercompany' class='form-control' placeholder='Enter your email'>
+        </div>
+        <div class='form-group'>
+            <h2>Address</h2>
+            <input type='text' ng-model='shipcustomeraddress' class='form-control' placeholder='Enter your password'>
+        </div>
+        <div class='form-group'>
+            <h2>City</h2>
+            <input type='text' ng-model='shipcustomercity' class='form-control' placeholder='Enter your password'>
+        </div>
+        <div class='form-group'>
+            <h2>State</h2>
+            <input type='text' ng-model='shipcustomerstate' class='form-control' placeholder='Enter your password'>
+        </div>
+        <div class='form-group'>
+            <h2>Postal Code</h2>
+            <input type='text' ng-model='shipcustomerpostal' class='form-control' placeholder='Enter your password'>
+        </div>
+        <div class='form-group'>
+            <h2>Country</h2>
+            <input type='text' ng-model='shipcustomercountry' class='form-control' placeholder='Enter your password'>
+        </div>
+        <div class='form-group'>
+            <h2>Phone:</h2>
+            <input type='text' ng-model='shipcustomerphone' class='form-control' placeholder='Enter your password'>
+        </div>
+        <div class='form-group'>
+        <h2>Email Address</h2>
+        <input type='text' ng-model='customeremail' class='form-control' placeholder='Enter your password'>
+    </div>
+    </div>
+</div> <!--close out row div -->
 </div>
+</div> <!--close out container div -->
+<br>
+<br>
 
-<div class='col-md-6 col-md-offset-3 background'>
-    <div class='form-group'>
+<div class='col-md-8 col-md-offset-2 background'>
     <h1>Payment Info</h1>
-        <h2>Payment Method</h2>
-        <input type='text' ng-model='customer.cardtype' class='form-control' placeholder='Enter your name'>
-        <h2>Credit Card Number</h2>
-        <input type='text' ng-model='customer.number' class='form-control' placeholder='Enter your username'>
-        <h2>Expiration Month</h2>
-        <input type='text' ng-model='customer.month' class='form-control' placeholder='Enter your email'>
-        <h2>Expiration Year</h2>
-        <input type='text'  ng-model='customer.year' class='form-control' placeholder='Enter your email'>
-        <h2>CVC</h2>
-        <input type='text'  ng-model='customer.cvc' class='form-control' placeholder='Enter your email'>
-        <h2>Shipping Method</h2>
-        <input type='text' ng-model='shippingmethod' class='form-control' placeholder='Enter your password'>
+        <div class='form-group'>
+            <h2>Payment Method</h2>
+            <input type='text' ng-model='customer.cardtype' class='form-control' placeholder='Enter your name'>
+        </div>
+        <div class='form-group'>
+            <h2>Credit Card Number</h2>
+            <input type='text' ng-model='customer.number' class='form-control' placeholder='Enter your username'>
+        </div>
+        <div class='form-group'>
+            <h2>Expiration Month</h2>
+            <input type='text' ng-model='customer.month' class='form-control' placeholder='Enter your email'>
+        </div>
+        <div class='form-group'>
+            <h2>Expiration Year</h2>
+            <input type='text'  ng-model='customer.year' class='form-control' placeholder='Enter your email'>
+        </div>
+        <div class='form-group'>
+            <h2>CVC</h2>
+            <input type='text'  ng-model='customer.cvc' class='form-control' placeholder='Enter your email'>
+        </div>
+        <div class='form-group'>
+            <h2>Shipping Method</h2>
+            <input type='text' ng-model='shippingmethod' class='form-control' placeholder='Enter your password'>
+        </div>
+        <div class='col-md-6 background'>
+            <div class='form-group'>
+                <button class='btn btn-primary' ng-click='submitOrder()'>Submit Order</button>
+            </div>
+        </div>
     </div>
   </div>
 
-  <div class='col-md-6 col-md-offset-3 background'>
-    <div class='form-group'>
-      <button class='btn btn-primary' ng-click='submitOrder()'>Submit Order</button>
-    </div>
-  </div>
-</div>
+
+
+
+
+
+
+
