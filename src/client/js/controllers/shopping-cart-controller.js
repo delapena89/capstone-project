@@ -15,6 +15,7 @@ app.controller('shoppingCtrl', ['$scope','httpService','$rootScope','cartService
 
   $scope.submitOrder = function() {
     $scope.customers = httpService.submitOrder($scope.customer);
+    $location.path('/order-success');
   };
 
 }]);

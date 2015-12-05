@@ -51,6 +51,9 @@ app.config(function($routeProvider) {
     })
     .when('/checkout', {
       templateUrl: 'views/checkout.html'
+    })
+    .when('/order-success', {
+      templateUrl: 'views/order-success.html'
     });
 
 });
