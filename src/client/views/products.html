@@ -3,52 +3,34 @@
 
 <div class='row push-middle'>
   <div class='col-md-8 col-md-offset-2'>
+<!--   <div ng-repeat='type in types track by $index'>
+    {{ type }}
+  </div> -->
 
 
     <div class="btn-group" uib-dropdown is-open="status.isopentype">
       <button id="price" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Type  <span class="caret"></span></button>
-        <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="type">
-          <li class='headerAlign'>Flange Mounted</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>Flangeless</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>Stud Mounted</li>
-          <li class="divider"></li>
-          <li class='headerAlign padding'>Stud Mounted Machine</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>Stud Mounted Heavy Duty</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>Pipe Mounted</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>Drop In</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>Drop In Heavy Duty</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>Flying Saucer</li>
+        <ul ng-model='type' class="uib-dropdown-menu" aria-labelledby="type" >
+          <li ng-repeat='type in types track by $index'><span ng-click="filter('type', type)">{{ type }}</span></li>
         </ul>
     </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenprice">
       <button id="price" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Price  <span class="caret"></span></button>
         <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="price">
-          <li class='headerAlign'>$0-$20</li>
+          <li ng-repeat='price in prices track by $index'><span ng-click="priceFilter(price.label)">{{ price.label }}</span></li>
+<!--           <li class='headerAlign'>$0-$20</li>
           <li class="divider"></li>
           <li class='headerAlign'>$20-$40</li>
           <li class="divider"></li>
           <li class='headerAlign'>$40-$60</li>
           <li class="divider"></li>
-          <li class='headerAlign'>$60-Above</li>
+          <li class='headerAlign'>$60-Above</li> -->
         </ul>
     </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenloadCapacity">
       <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Load Capacity  <span class="caret"></span></button>
-        <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="loadCapacity">
-          <li class='headerAlign'>0-20 lbs</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>21-40 lbs</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>41-60 lbs</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>61-80 lbs</li>
+        <ul ng-model='loadCapacity' class="uib-dropdown-menu" aria-labelledby="loadCapacity">
+          <li ng-repeat='load in loadCapacity track by $index'><span ng-click="filter('loadCapacity', load)">{{ load }}</span></li>
         </ul>
     </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenballMaterial">
@@ -80,7 +62,7 @@
 
 
 <div class='row'>
-      <div class='col-md-3 cell' ng-repeat='product in products'>
+      <div class='col-md-3 cell' ng-repeat='product in products | filter: type'>
         <img class='img' ng-src="{{product.image1}}">
         <!-- <img class='img' ng-src="{{product.image2}}"> -->
           <p class='parens'><strong>(pictures are only illustrative)</strong></p>
