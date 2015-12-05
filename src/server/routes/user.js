@@ -31,6 +31,7 @@ router.post('/login', function(req,res,next){
       });
     }
     if (!user) {
+      console.log(info);
       return res.status(401).json({
         err: info
       });
@@ -74,7 +75,7 @@ router.get('/findByUsername/:username', function(req, res, next) {
   });
 });
 
-
+// checks unique user email
 router.get('/findByEmail/:email', function(req, res, next) {
   User.findOne({ email: req.params.email }, function (err, doc) {
     // if ( doc ) {

@@ -120,12 +120,12 @@ app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal',
       var range = $scope.prices.filter(function(obj){
         return obj.label === stringValue;
       })[0].range;
-      console.log(range)
+      console.log(range);
       var temp = $scope.products.filter(function(obj){
         return obj.price > range[0] && obj.price <= range[1];
       });
       $scope.products = temp;
-      console.log($scope.products)
+      console.log($scope.products);
   };
 
 

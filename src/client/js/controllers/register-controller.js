@@ -43,14 +43,15 @@ app.controller('registerCtrl', ['$scope', '$rootScope', '$http', '$location', fu
   // user login
   $scope.login = function () {
     console.log('click');
-    console.log($scope.customername, $scope.customerusername, $scope.customerpassword);
+    // console.log($scope.customername, $scope.customerusername, $scope.customerpassword);
     $http.post('/users/login', {
-      name: $scope.customername,
-      username: $scope.customerusername,
+      // name: $scope.customername,
+      // username: $scope.customerusername,
+      username: $scope.customeremail,
       password: $scope.customerpassword
     })
     .then(function(data){
-      console.log(data.data.user.name);
+      // console.log(data.data.user.name);
       $rootScope.userName = data.data.user.name;
       $location.path('/');
     });

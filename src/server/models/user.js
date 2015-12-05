@@ -9,6 +9,10 @@ var User = new Schema({
   password: String
 });
 
-User.plugin(passportLocalMongoose);
+var options = {
+  usernameField: 'email'
+};
+
+User.plugin(passportLocalMongoose, options);
 
 module.exports = mongoose.model('users', User);
