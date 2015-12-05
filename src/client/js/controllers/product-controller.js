@@ -46,6 +46,11 @@ app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal',
     '500',
     '750'
   ];
+  $scope.ballMaterial = [
+    'Carbon Steel',
+    'Nylon',
+    'Stainless Steel'
+  ];
 
   $scope.addProduct = function() {
     $scope.products = httpService.addProduct($scope.product);

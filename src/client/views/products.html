@@ -34,13 +34,9 @@
         </ul>
     </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenballMaterial">
-      <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Ball Material  <span class="caret"></span></button>
-        <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="ballMaterial">
-          <li class='headerAlign'>Carbon Steel</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>Nylon</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>Stainless Steel</li>
+      <button id="ballMaterial" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Ball Material  <span class="caret"></span></button>
+        <ul ng-model='ballMaterial' class="uib-dropdown-menu" aria-labelledby="ballMaterial">
+          <li ng-repeat='ball in ballMaterial track by $index'><span ng-click="filter('ballMaterial', ball)">{{ ball }}</span></li>
         </ul>
     </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenhousingMaterial">
