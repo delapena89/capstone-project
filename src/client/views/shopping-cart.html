@@ -26,9 +26,15 @@
 <div class='row'>
   <div class='col-md-10 shopBackground'>
     <h2>Shipping Info</h2>
-    <p>UPS Ground:</p>
-    <p>UPS Next Day Air</p>
-    <p>UPS 3 day select</p>
+    <div class="radio">
+      <label><input type="radio" name="optradio">UPS Ground</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio">UPS Next Day Air</label>
+    </div>
+    <div class="radio">
+      <label><input type="radio" name="optradio">UPS 3 Day Select</label>
+    </div>
     <button class='btn btn-lg btn-success checkout' ng-click='checkout()'>CHECKOUT</button>
   </div>
 </div>
