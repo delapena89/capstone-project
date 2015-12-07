@@ -57,7 +57,7 @@ app.config(function($routeProvider) {
     })
     .when('/credit-card-error', {
       templateUrl: 'views/credit-card-error.html'
-    })
+    });
 
 });
 

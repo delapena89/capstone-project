@@ -3,6 +3,7 @@ app.controller('shoppingCtrl', ['$scope','httpService','$rootScope','cartService
   $scope.orderHistory = cartService.getCart();
   console.log($scope.orderHistory);
 
+
   $scope.checkout = function() {
     console.log('click');
     console.log($scope.orderHistory);
@@ -18,8 +19,11 @@ app.controller('shoppingCtrl', ['$scope','httpService','$rootScope','cartService
     orderResults.then(function (response) {
       if (response.object === 'charge') {
         $location.path('/order-success');
+        console.log(response);
       } else {
         $location.path('/credit-card-error');
+        $rootScope.errorMessage = response;
+        console.log(response);
       }
     });
 
