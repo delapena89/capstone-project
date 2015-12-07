@@ -32,7 +32,12 @@ function httpService($http) {
   }
 
   function submitOrder(payload) {
-    return $http.post('/products/checkout', payload);
+    return $http.post('/products/checkout', payload)
+    .then(function(response) {
+      console.log(payload);
+      console.log(response.data);
+      return response.data;
+    });
 
   }
 

@@ -19,7 +19,7 @@ app.controller('shoppingCtrl', ['$scope','httpService','$rootScope','cartService
       if (response.object === 'charge') {
         $location.path('/order-success');
       } else {
-        $location.path('/');
+        $location.path('/credit-card-error');
       }
     });
 

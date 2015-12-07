@@ -54,7 +54,10 @@ app.config(function($routeProvider) {
     })
     .when('/order-success', {
       templateUrl: 'views/order-success.html'
-    });
+    })
+    .when('/credit-card-error', {
+      templateUrl: 'views/credit-card-error.html'
+    })
 
 });
 
