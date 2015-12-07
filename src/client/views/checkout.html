@@ -3,7 +3,7 @@
         <div>
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2">
-                    <h1 class='color'>Customer Checkout</h1>
+                    <h1 class='color margin'>Customer Checkout</h1>
                 </div>
             </div>
 <!-- Bill To Info -->
@@ -50,11 +50,12 @@
         <h4>Email Address</h4>
         <input type='text' ng-model='customeremail' class='form-control' placeholder='Enter your email'>
     </div>
-    <button class='btn btn-lg btn-success' ng-click='billTo = true; shipTo = false;'>NEXT</button>
+    <div class='form-group'>
+        <button class='btn btn-lg btn-success' ng-click='billTo = true; shipTo = false;'>NEXT</button>
+    </div>
 </div>
 </div> <!--close out row div -->
-<br>
-<br>
+
 <!-- Ship To Info -->
   <div class='row'>
   <div ng-hide='shipTo' class='col-md-10 col-md-offset-1 background ridge'>
@@ -98,14 +99,15 @@
         <div class='form-group'>
         <h4>Email Address</h4>
         <input type='text' ng-model='customeremail' class='form-control' placeholder='Enter your eamil'>
+        <br>
+        <br>
         <button class='btn btn-lg btn-success' ng-click='shipTo = true; billTo = false'>Back</button>
         <button class='btn btn-lg btn-success' ng-click='shipTo = true; payment = false'>NEXT</button>
     </div>
     </div>
 </div>
 </div> <!--close out container div -->
-<br>
-<br>
+
 
 <div ng-hide='payment' class='col-md-10 col-md-offset-1 background ridge bottom'>
     <h1>Payment Info</h1>
@@ -132,7 +134,7 @@
         <div class='col-md-6 background'>
             <div class='form-group'>
                 <button class='btn btn-lg btn-success' ng-click='shipTo = false; payment = true'>Back</button>
-                <button class='btn btn-primary' ng-click='submitOrder()'>Submit Order</button>
+                <button class='btn btn-lg btn-primary' ng-click='submitOrder()'>Submit Order</button>
             </div>
         </div>
     </div>
