@@ -3,6 +3,12 @@ app.controller('shoppingCtrl', ['$scope','httpService','$rootScope','cartService
   $scope.orderHistory = cartService.getCart();
   console.log($scope.orderHistory);
 
+  $scope.form = true;
+
+  // $scope.next = function() {
+  //   $scope.form = false;
+  // };
+
 
   $scope.checkout = function() {
     console.log('click');
