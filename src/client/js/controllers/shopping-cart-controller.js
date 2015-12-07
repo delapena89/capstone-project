@@ -14,8 +14,15 @@ app.controller('shoppingCtrl', ['$scope','httpService','$rootScope','cartService
   };
 
   $scope.submitOrder = function() {
-    $scope.customers = httpService.submitOrder($scope.customer);
-    $location.path('/order-success');
+    var orderResults = httpService.submitOrder($scope.customer);
+    orderResults.then(function (response) {
+      if (response.object === 'charge') {
+        $location.path('/order-success');
+      } else {
+        $location.path('/');
+      }
+    });
+
   };
 
 }]);
