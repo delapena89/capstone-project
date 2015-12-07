@@ -3,7 +3,7 @@ app.controller('shoppingCtrl', ['$scope','httpService','$rootScope','cartService
   $scope.orderHistory = cartService.getCart();
   console.log($scope.orderHistory);
 
-  $scope.form = true;
+  // $scope.form = true;
 
   // $scope.next = function() {
   //   $scope.form = false;
@@ -21,10 +21,13 @@ app.controller('shoppingCtrl', ['$scope','httpService','$rootScope','cartService
   };
 
   $scope.submitOrder = function() {
-    var orderResults = httpService.submitOrder($scope.customer);
+    console.log($scope.orderHistory);
+    var orderResults = httpService.submitOrder({customer: $scope.customer, user: $rootScope.user.id, product: $scope.orderHistory[0]._id});
     orderResults.then(function (response) {
-      if (response.object === 'charge') {
+      console.log($scope.customer);
+      if (response.charge.object === 'charge') {
         $location.path('/order-success');
+        cartService.clearCart();
         console.log(response);
       } else {
         $location.path('/credit-card-error');

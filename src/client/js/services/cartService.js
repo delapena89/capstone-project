@@ -2,7 +2,8 @@ app.factory('cartService', cartService);
 
 function cartService() {
   var factory = {
-    getCart: getCart
+    getCart: getCart,
+    clearCart: clearCart
   };
 
   var cart = [];
@@ -10,6 +11,11 @@ function cartService() {
   return factory;
 
   function getCart() {
+    return cart;
+  }
+
+  function clearCart() {
+    cart = [];
     return cart;
   }
 

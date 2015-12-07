@@ -7,6 +7,7 @@ function httpService($http) {
     getProducts: getProducts,
     getSingleProduct: getSingleProduct,
     submitOrder: submitOrder,
+    getOrders: getOrders
     // pushToShoppingCart: pushToShoppingCart
   };
 
@@ -32,21 +33,19 @@ function httpService($http) {
   }
 
   function submitOrder(payload) {
+    // { user_id: $rootScope.user._id,
+    //   products: [{ order_date: ..., total: ..., products: []}]}
     return $http.post('/products/checkout', payload)
     .then(function(response) {
       console.log(payload);
       console.log(response.data);
       return response.data;
     });
-
   }
 
-  // function pushToShoppingCart(id) {
-  //   console.log('click');
-  //   console.log(id);
-  //   return $http.get('/products/products/' + id);
-  // }
-
+  function getOrders (id) {
+      return $http.get('/users/order-history/' + id);
+    }
 
 }
 

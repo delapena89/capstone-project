@@ -1,4 +1,14 @@
-<h1 class='color'>Order History</h1>
+<div ng-controller='productCtrl'>
+  <h1 class='color'>Order History</h1>
+    <div ng-repeat='order in orders'>
+      <p>{{ order._id }}</p>
+      <p>{{ order.sku }}</p>
+      <p>{{ order.price }}</p>
+      <p>{{ order.loadCapacity }}</p>
+      <p>{{ order.housingMaterial }}</p>
+      <p>{{ order.weight }}</p>
+      <p>{{ order.description }}</p>
+    </div>
 
-<p class='color'>This page will show all of the products purchased by the customer when logged in.</p>
-<p class='color'>It will show the sku, quantity, date of purchase, picture of item and total amount</p>
+
+</div>

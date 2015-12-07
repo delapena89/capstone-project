@@ -12,43 +12,43 @@
     <h1>Bill To Info</h1>
     <div class='form-group'>
         <h4>First Name</h4>
-        <input type='text' ng-model='customername' class='form-control' placeholder='Enter your name'>
+        <input type='text' ng-model='customer.name' class='form-control' placeholder='Enter your name'>
     </div>
     <div class='form-group'>
         <h4>Last Name</h4>
-        <input type='text' ng-model='customernamelast' class='form-control' placeholder='Enter your last name'>
+        <input type='text' ng-model='customer.namelast' class='form-control' placeholder='Enter your last name'>
     </div>
     <div class='form-group'>
         <h4>Company</h4>
-        <input type='text' ng-model='customercompany' class='form-control' placeholder='Enter your Company Name'>
+        <input type='text' ng-model='customer.company' class='form-control' placeholder='Enter your Company Name'>
     </div>
     <div class='form-group'>
         <h4>Address</h4>
-        <input type='text' ng-model='customeraddress' class='form-control' placeholder='Enter your Address'>
+        <input type='text' ng-model='customer.address' class='form-control' placeholder='Enter your Address'>
     </div>
     <div class='form-group'>
         <h4>City</h4>
-        <input type='text' ng-model='customercity' class='form-control' placeholder='Enter your City'>
+        <input type='text' ng-model='customer.city' class='form-control' placeholder='Enter your City'>
     </div>
     <div class='form-group'>
         <h4>State</h4>
-        <input type='text' ng-model='customerstate' class='form-control' placeholder='Enter your State'>
+        <input type='text' ng-model='customer.state' class='form-control' placeholder='Enter your State'>
     </div>
     <div class='form-group'>
         <h4>Postal Code</h4>
-        <input type='text' ng-model='customerpostalcode' class='form-control' placeholder='Enter your Zipcode'>
+        <input type='text' ng-model='customer.postalcode' class='form-control' placeholder='Enter your Zipcode'>
     </div>
     <div class='form-group'>
         <h4>Country</h4>
-        <input type='text' ng-model='customercountry' class='form-control' placeholder='Enter your Country'>
+        <input type='text' ng-model='customer.country' class='form-control' placeholder='Enter your Country'>
     </div>
     <div class='form-group'>
         <h4>Phone:</h4>
-        <input type='text' ng-model='customerphone' class='form-control' placeholder='Enter your Phone Number'>
+        <input type='text' ng-model='customer.phone' class='form-control' placeholder='Enter your Phone Number'>
     </div>
     <div class='form-group'>
         <h4>Email Address</h4>
-        <input type='text' ng-model='customeremail' class='form-control' placeholder='Enter your email'>
+        <input type='text' ng-model='customer.email' class='form-control' placeholder='Enter your email'>
     </div>
     <div class='form-group'>
         <button class='btn btn-lg btn-success' ng-click='billTo = true; shipTo = false;'>NEXT</button>
@@ -62,43 +62,43 @@
     <h1>Ship To Info</h1>
         <div class='form-group'>
             <h4>First Name</h4>
-            <input type='text' ng-model='shipcustomername' class='form-control' placeholder='Enter your name'>
+            <input type='text' ng-model='customer.shipping.name' class='form-control' placeholder='Enter your name'>
         </div>
         <div class='form-group'>
             <h4>Last Name</h4>
-            <input type='text' ng-model='shipcustomelastname' class='form-control' placeholder='Enter your last name'>
+            <input type='text' ng-model='customer.shipping.lastname' class='form-control' placeholder='Enter your last name'>
         </div>
         <div class='form-group'>
             <h4>Company</h4>
-            <input type='text' ng-model='shipcustomercompany' class='form-control' placeholder='Enter your Company Name'>
+            <input type='text' ng-model='customer.shipping.company' class='form-control' placeholder='Enter your Company Name'>
         </div>
         <div class='form-group'>
             <h4>Address</h4>
-            <input type='text' ng-model='shipcustomeraddress' class='form-control' placeholder='Enter your Address'>
+            <input type='text' ng-model='customer.shipping.address' class='form-control' placeholder='Enter your Address'>
         </div>
         <div class='form-group'>
             <h4>City</h4>
-            <input type='text' ng-model='shipcustomercity' class='form-control' placeholder='Enter your City'>
+            <input type='text' ng-model='customer.shipping.city' class='form-control' placeholder='Enter your City'>
         </div>
         <div class='form-group'>
             <h4>State</h4>
-            <input type='text' ng-model='shipcustomerstate' class='form-control' placeholder='Enter your State'>
+            <input type='text' ng-model='customer.shipping.state' class='form-control' placeholder='Enter your State'>
         </div>
         <div class='form-group'>
             <h4>Postal Code</h4>
-            <input type='text' ng-model='shipcustomerpostal' class='form-control' placeholder='Enter your Zipcode'>
+            <input type='text' ng-model='customer.shipping.postal' class='form-control' placeholder='Enter your Zipcode'>
         </div>
         <div class='form-group'>
             <h4>Country</h4>
-            <input type='text' ng-model='shipcustomercountry' class='form-control' placeholder='Enter your Country'>
+            <input type='text' ng-model='customer.shipping.country' class='form-control' placeholder='Enter your Country'>
         </div>
         <div class='form-group'>
             <h4>Phone:</h4>
-            <input type='text' ng-model='shipcustomerphone' class='form-control' placeholder='Enter your Phone Number'>
+            <input type='text' ng-model='customer.shipping.phone' class='form-control' placeholder='Enter your Phone Number'>
         </div>
         <div class='form-group'>
         <h4>Email Address</h4>
-        <input type='text' ng-model='customeremail' class='form-control' placeholder='Enter your eamil'>
+        <input type='text' ng-model='customer.shipping.email' class='form-control' placeholder='Enter your eamil'>
         <br>
         <br>
         <button class='btn btn-lg btn-success' ng-click='shipTo = true; billTo = false'>Back</button>
@@ -113,23 +113,23 @@
     <h1>Payment Info</h1>
         <div class='form-group'>
             <h4>Payment Method</h4>
-            <input type='text' ng-model='customer.cardtype' class='form-control' placeholder='Enter your card type'>
+            <input type='text' ng-model='customer.card.cardtype' class='form-control' placeholder='Enter your card type'>
         </div>
         <div class='form-group'>
             <h4>Credit Card Number</h4>
-            <input type='text' ng-model='customer.number' class='form-control' placeholder='Enter your credit card number'>
+            <input type='text' ng-model='customer.card.number' class='form-control' placeholder='Enter your credit card number'>
         </div>
         <div class='form-group'>
             <h4>Expiration Month</h4>
-            <input type='text' ng-model='customer.month' class='form-control' placeholder='Enter the expiration month'>
+            <input type='text' ng-model='customer.card.month' class='form-control' placeholder='Enter the expiration month'>
         </div>
         <div class='form-group'>
             <h4>Expiration Year</h4>
-            <input type='text'  ng-model='customer.year' class='form-control' placeholder='Enter the expiration year'>
+            <input type='text'  ng-model='customer.card.year' class='form-control' placeholder='Enter the expiration year'>
         </div>
         <div class='form-group'>
             <h4>CVC</h4>
-            <input type='text'  ng-model='customer.cvc' class='form-control' placeholder='Enter the cvc code'>
+            <input type='text'  ng-model='customer.card.cvc' class='form-control' placeholder='Enter the cvc code'>
         </div>
         <div class='col-md-6 background'>
             <div class='form-group'>

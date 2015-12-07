@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var User = mongoose.model('users');
+var Product = mongoose.model('products');
 var passport = require('passport');
 var local = require('passport-local');
 
@@ -86,6 +87,19 @@ router.get('/findByEmail/:email', function(req, res, next) {
 
     doc ? res.send(true) : res.send(false);
 
+  });
+});
+
+// get order histories from customers
+router.get('/order-history/:id', function(req, res, next) {
+  User.findById(req.params.id)
+  .populate('orders')
+  .exec(function(err,user) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(user.orders);
+    }
   });
 });
 

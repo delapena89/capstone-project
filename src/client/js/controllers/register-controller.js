@@ -51,8 +51,8 @@ app.controller('registerCtrl', ['$scope', '$rootScope', '$http', '$location', fu
       password: $scope.customerpassword
     })
     .then(function(data){
-      // console.log(data.data.user.name);
-      $rootScope.userName = data.data.user.name;
+      $rootScope.user = {username: data.data.user.name, id: data.data.user._id};
+      console.log($rootScope.user);
       $location.path('/');
     });
   };
@@ -72,7 +72,7 @@ app.controller('registerCtrl', ['$scope', '$rootScope', '$http', '$location', fu
 
   // is user logged in or not
   $scope.loggedIn = function() {
-    if ($rootScope.userName) {
+    if ($rootScope.user) {
       return true;
     } else {
       return false;

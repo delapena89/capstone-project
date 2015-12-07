@@ -69,6 +69,15 @@ app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal',
     });
   };
 
+  $scope.getOrders = function(id) {
+    httpService.getOrders(id)
+    .success(function(response) {
+      console.log(response);
+      $scope.orders = response;
+      console.log($scope.orders);
+    });
+  };
+
   $scope.getSingleProduct = function(id) {
     httpService.getSingleProduct(id)
     .success(function(response) {
@@ -129,10 +138,9 @@ app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal',
   };
 
 
-
-
 $scope.getProducts();
-
+console.log($rootScope.user);
+$scope.getOrders($rootScope.user.id);
 
 
 

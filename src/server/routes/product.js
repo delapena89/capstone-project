@@ -2,23 +2,25 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose-q')(require('mongoose'), {spread: true});
 var Product = mongoose.model('products');
+var User = mongoose.model('users');
 var key = require('../../../_config').stripe;
 var stripe = require('stripe')(key);
 
 
 router.post('/checkout', function(req, res, next) {
+  console.log(req.body);
     var card = {
-    'number': req.body.number,
-    'exp_month': req.body.month,
-    'exp_year': req.body.year,
-    'cvc': req.body.cvc
+    'number': req.body.customer.card.number,
+    'exp_month': req.body.customer.card.month,
+    'exp_year': req.body.customer.card.year,
+    'cvc': req.body.customer.card.cvc
   };
 //create tok method
 stripe.tokens.create({
   card: card
 }, function(err, token) {
   //charge method
-  console.log(token)
+  console.log(token);
   stripe.charges.create({
   amount: 1000,
   currency: "usd",
@@ -30,7 +32,16 @@ stripe.tokens.create({
     res.json(err);
   } else {
     console.log(charge);
-    res.json(charge);
+    var userID = req.body.user;
+    var update = {$push:{orders:req.body.product}};
+    var options = {new: true, upsert: true};
+    User.findByIdAndUpdateQ(userID, update, options)
+    .then(function(user){
+      res.json({user: user, charge: charge});
+    }).catch(function(err){
+      res.json(err);
+    });
+
   }
 });
 });
