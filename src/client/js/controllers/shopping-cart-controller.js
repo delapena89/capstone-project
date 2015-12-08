@@ -19,14 +19,14 @@ app.controller('shoppingCtrl', ['$scope','httpService','$rootScope','cartService
     var orderResults = httpService.submitOrder({customer: $scope.customer, user: $rootScope.user.id, product: $scope.orderHistory[0]._id});
     orderResults.then(function (response) {
       console.log($scope.customer);
-      if (response.charge === 'charge') {
-        $location.path('/order-success');
-        cartService.clearCart();
-        console.log(response);
-      } else {
-        $location.path('/credit-card-error');
-        $rootScope.errorMessage = response.raw.message;
-        console.log(response.raw.message);
+        if (response.charge) {
+          $location.path('/order-success');
+          cartService.clearCart();
+          console.log(response);
+        } else {
+          $location.path('/credit-card-error');
+          $rootScope.errorMessage = response.raw.message;
+          console.log(response.raw.message);
       }
     });
 
