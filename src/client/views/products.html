@@ -54,17 +54,17 @@
 
 
 <div class='row'>
-      <div class='col-md-3 cell' ng-repeat='product in products | filter: type'>
+      <div class='col-md-3 cell product-left' ng-repeat='product in products | filter: type'>
         <img class='img' ng-src="{{product.image1}}">
         <!-- <img class='img' ng-src="{{product.image2}}"> -->
           <p class='parens'><strong>(pictures are only illustrative)</strong></p>
-          <p>Type: {{product.type}}</p>
+          <p><strong>Type:</strong> {{product.type}}</p>
           <!-- <p>id: {{product._id}}</p> -->
-          <p>SKU: {{product.sku}}</p>
-          <p>Price: {{product.price | currency}}</p>
-          <p>Load Capacity: {{product.loadCapacity}}</p>
-          <p>Ball Material: {{product.ballMaterial}}</p>
-          <p>Housing Material: {{product.housingMaterial}}</p>
+          <p><strong>SKU:</strong> {{product.sku}}</p>
+          <p><strong>Price:</strong> {{product.price | currency}}</p>
+          <p><strong>Load Capacity:</strong> {{product.loadCapacity}}</p>
+          <p><strong>Ball Material:</strong> {{product.ballMaterial}}</p>
+          <p><strong>Housing Material:</strong> {{product.housingMaterial}}</p>
           <!-- <p>Weight: {{product.weight}} lbs</p> -->
           <!-- <p>{{product.description}}</p> -->
           <div class='row button-padding'>

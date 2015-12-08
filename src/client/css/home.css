@@ -25,35 +25,37 @@ a {
 }
 
 .height {
-  height: 400px;
+  height: 40%;
   margin-bottom: 50px;
+  width: 150%;
 }
 
 .homeText {
-  width: 75%;
-  margin-left: 200px;
+  width: 90%;
+  margin-left: 5%;
   text-align: justify;
   background: whitesmoke;
   color: black;
-  padding: 15px;
+  padding: 1.5%;
   font-size: 1.5em;
 }
 
-.homeAlign {
-  margin-left: 145px;
-}
 
 .bottom {
   margin-bottom: 50px;
 }
 
-.left {
-  margin-left: 625px;
+.align {
+  text-align: center;
 }
 
-.left2 {
-  margin-left: 400px;
+.display {
+  margin-left: 23%;
 }
+
+
+
+
 
 
 
