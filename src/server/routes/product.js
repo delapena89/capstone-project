@@ -31,9 +31,12 @@ stripe.tokens.create({
     console.log(err);
     res.json(err);
   } else {
-    console.log(charge);
+    // console.log(charge);
     var userID = req.body.user;
-    var update = {$push:{orders:req.body.product}};
+    var productArray = req.body.products;
+    console.log(productArray);
+    var update = {$push : {orders : {$each: productArray}}};
+    // console.log(req.body);
     var options = {new: true, upsert: true};
     User.findByIdAndUpdateQ(userID, update, options)
     .then(function(user){
@@ -50,7 +53,11 @@ stripe.tokens.create({
 
 });
 
-
+// function addProducts(productArray, userOrders) {
+//   for (var i = 0; i < productArray.length; i++) {
+//     userOrders.push(productArray[i]);
+//   }
+// }
 
 // post single product
 router.post('/', function(req, res, next) {

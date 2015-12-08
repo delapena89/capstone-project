@@ -16,7 +16,7 @@ app.controller('shoppingCtrl', ['$scope','httpService','$rootScope','cartService
 
   $scope.submitOrder = function() {
     console.log($scope.orderHistory);
-    var orderResults = httpService.submitOrder({customer: $scope.customer, user: $rootScope.user.id, product: $scope.orderHistory[0]._id});
+    var orderResults = httpService.submitOrder({customer: $scope.customer, user: $rootScope.user.id, products: $scope.orderHistory});
     orderResults.then(function (response) {
       console.log($scope.customer);
         if (response.charge) {

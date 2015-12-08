@@ -7,7 +7,7 @@ var User = new Schema({
   username: {type: String, unique: true},
   email: {type: String, unique: true},
   password: String,
-  orders : [{ type : Schema.Types.ObjectId, ref : 'products'}],
+  orders : Array
 });
 
 var options = {

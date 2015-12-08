@@ -92,15 +92,12 @@ router.get('/findByEmail/:email', function(req, res, next) {
 
 // get order histories from customers
 router.get('/order-history/:id', function(req, res, next) {
-  User.findById(req.params.id)
-  .populate('orders')
-  .exec(function(err,user) {
-    if (err) {
-      res.send(err);
-    } else {
+  User.findByIdQ(req.params.id)
+    .then(function(user) {
       res.json(user.orders);
-    }
-  });
+    }).catch(function(err) {
+      res.json(err);
+    });
 });
 
 

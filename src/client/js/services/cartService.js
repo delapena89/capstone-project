@@ -7,6 +7,7 @@ function cartService() {
   };
 
   var cart = [];
+  var previousOrders = [];
 
   return factory;
 
