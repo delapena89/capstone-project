@@ -1,12 +1,8 @@
 <div ng-controller='productCtrl'>
   <h1 class='color'>Products</h1>
 
-<div class='row push-middle'>
+<div class='row'>
   <div class='col-md-8 col-md-offset-2'>
-<!--   <div ng-repeat='type in types track by $index'>
-    {{ type }}
-  </div> -->
-
 
     <div class="btn-group" uib-dropdown is-open="status.isopentype">
       <button id="price" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Type  <span class="caret"></span></button>
@@ -18,13 +14,6 @@
       <button id="price" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Price  <span class="caret"></span></button>
         <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="price">
           <li ng-repeat='price in prices track by $index'><span ng-click="priceFilter(price.label)">{{ price.label }}</span></li>
-<!--           <li class='headerAlign'>$0-$20</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>$20-$40</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>$40-$60</li>
-          <li class="divider"></li>
-          <li class='headerAlign'>$60-Above</li> -->
         </ul>
     </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenloadCapacity">
@@ -54,7 +43,7 @@
 
 
 <div class='row'>
-      <div class='col-md-3 cell product-left' ng-repeat='product in products | filter: type'>
+      <div class='cell' ng-repeat='product in products | filter: type'>
         <img class='img' ng-src="{{product.image1}}">
         <!-- <img class='img' ng-src="{{product.image2}}"> -->
           <p class='parens'><strong>(pictures are only illustrative)</strong></p>
@@ -68,8 +57,8 @@
           <!-- <p>Weight: {{product.weight}} lbs</p> -->
           <!-- <p>{{product.description}}</p> -->
           <div class='row button-padding'>
-            <button class='btn btn-lg btn-primary' ng-click='pushToShoppingCart(product)'>Add to Cart</button>
-            <button class='btn btn-lg btn-danger' ng-click='getSingleProduct(product._id); openModal()'>Details</button>
+            <button class='btn btn-md btn-primary' ng-click='pushToShoppingCart(product)'>Add to Cart</button>
+            <button class='btn btn-md btn-danger' ng-click='getSingleProduct(product._id); openModal()'>Details</button>
           </div>
       </div>
 </div>

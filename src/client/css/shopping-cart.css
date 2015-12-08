@@ -1,14 +1,14 @@
 .cell1 {
   background-color: lightblue;
   border:2px solid black;
-  padding-bottom: 15px;
+  padding-bottom: 16px;
 }
 
 .cell2 {
   background-color: lightblue;
   border:2px solid black;
   padding-top: 45px;
-  padding-bottom: 36px;
+  padding-bottom: 37px;
   text-align: center;
 }
 
@@ -19,13 +19,13 @@
 .shopBackground {
   background-color: lightblue;
   border: 2px solid black;
-  margin-left: 125px;
   margin-top: 20px;
+  width: 100%;
 }
 
 .checkout {
-  margin-left: 1350px;
-  margin-bottom: 20px;
+/*  margin-left: 1350px;
+*/  margin-bottom: 20px;
 }
 
 .red {
@@ -35,6 +35,13 @@
 
 .margin {
   margin-left: 180px;
+}
+
+.shoppingCell {
+  background-color: lightblue;
+  border: 2px solid black;
+  width: 22%;
+  padding: 1%;
 }
 
 

@@ -2,39 +2,30 @@
   background-color: lightblue;
   border:2px solid black;
   width: 20%;
-  padding: 10px;
+  min-height:100%;
+  padding: 1%;
+  display: inline-block;
 }
 
 .img {
   height: 200px;
   width: 200px;
-  margin-left: 9%;
   margin-top: 2%;
   margin-bottom: 2%;
   border: 3px solid black;
+  margin-left: 1.9%;
 }
 
 .parens {
-  margin-left: 7%;
+  margin-left: 16%;
 }
 
-.align {
-  margin-left: 10%;
-}
 
-.push-middle {
-  margin-left: 250px;
-}
-
-.padding {
-  padding-left: 5px;
-}
 
 .button-padding {
   padding-left: 23px;
+  margin-top: 2em;
 }
 
-.product-left {
-  padding-left: 60px;
-}
+
 
