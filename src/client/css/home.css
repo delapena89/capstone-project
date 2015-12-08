@@ -31,7 +31,7 @@ a {
 
 .homeText {
   width: 75%;
-  margin-left: 175px;
+  margin-left: 200px;
   text-align: justify;
   background: whitesmoke;
   color: black;
@@ -45,6 +45,14 @@ a {
 
 .bottom {
   margin-bottom: 50px;
+}
+
+.left {
+  margin-left: 625px;
+}
+
+.left2 {
+  margin-left: 400px;
 }
 
 
