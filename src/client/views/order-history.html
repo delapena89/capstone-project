@@ -1,14 +1,17 @@
 <div ng-controller='productCtrl'>
-  <h1 class='color'>Order History</h1>
-    <div ng-repeat='order in orders'>
-      <p>{{ order._id }}</p>
-      <p>{{ order.sku }}</p>
-      <p>{{ order.price }}</p>
-      <p>{{ order.loadCapacity }}</p>
-      <p>{{ order.housingMaterial }}</p>
-      <p>{{ order.weight }}</p>
-      <p>{{ order.description }}</p>
+  <div class='container background'>
+    <h1 class='color'>Order History</h1>
+      <div ng-repeat='order in orders'>
+        <img class='order-img ridge' ng-src="{{ order.image1 }}">
+        <h4><strong>SKU:</strong> {{ order.sku }}</h4>
+        <h4><strong>Price:</strong> {{ order.price | currency }}</h4>
+        <h4><strong>Load Capacity:</strong> {{ order.loadCapacity }}</h4>
+        <h4><strong>Housing Material:</strong> {{ order.housingMaterial }}</h4>
+        <h4><strong>Weight:</strong> {{ order.weight }}</h4>
+        <h4>{{ order.description }}</h4>
+        <hr>
     </div>
-
-
+  </div>
 </div>
+
+
