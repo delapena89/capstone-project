@@ -139,7 +139,6 @@ app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal',
 
 
 $scope.getProducts();
-console.log($rootScope.user);
 $scope.getOrders($rootScope.user.id);
 
 

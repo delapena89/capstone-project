@@ -64,7 +64,7 @@ app.controller('registerCtrl', ['$scope', '$rootScope', '$http', '$location', fu
     .then(function(data) {
       console.log(data);
       console.log('user is logged out');
-      $rootScope.userName = '';
+      $rootScope.user = '';
       $location.path('/');
     });
   };
