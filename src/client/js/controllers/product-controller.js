@@ -3,14 +3,13 @@ app.controller('productCtrl', ['$scope','httpService', '$location', '$uibModal',
   console.log('it is working');
   $scope.orderHistory = cartService.getCart();
   $scope.types = [
-    'Flange-Mounted Ball Transfer',
+    'Flange Mounted',
     'Flangeless',
     'Stud Mounted',
-    'Stud Mounted Machine',
-    'Stud Mounted Machine',
-    'Stud Mounted Heavy Duty',
+    'Stud Mtn Machine',
+    'Stud Mounted HD',
     'Pipe Mounted','Drop In',
-    'Drop In Heavy Duty',
+    'Drop In HD',
     'Flying Saucer'
   ];
   $scope.prices = [
