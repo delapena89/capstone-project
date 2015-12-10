@@ -69,6 +69,9 @@ app.config(function($routeProvider) {
     .when('/credit-card-error', {
       templateUrl: 'views/credit-card-error.html',
       access: {restricted: false}
+    })
+    .when('/test', {
+      templateUrl: 'views/test.html'
     });
 
 });

@@ -1,6 +1,7 @@
 <div ng-controller='productCtrl'>
+<div class='row'>
+  <h1 class='section-header align'>Order History</h1>
   <div class='container background'>
-    <h1 class='color'>Order History</h1>
       <div ng-repeat='order in orders'>
         <img class='order-img ridge' ng-src="{{ order.image1 }}">
         <h4><strong>SKU:</strong> {{ order.sku }}</h4>
@@ -12,6 +13,7 @@
         <hr>
     </div>
   </div>
+</div>
 </div>
 
 

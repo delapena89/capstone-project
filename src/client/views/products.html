@@ -1,67 +1,72 @@
 <div ng-controller='productCtrl'>
-  <h1 class='color align'>Products</h1>
-
 <div class='row'>
+  <h1 class="section-heading align">Products</h1>
+</div>
+
+<div class='row align'>
   <div class='col-md-8 col-md-offset-2'>
 
     <div class="btn-group" uib-dropdown is-open="status.isopentype">
-      <button id="price" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Type  <span class="caret"></span></button>
+      <button id="price" type="button" class="filter-button" uib-dropdown-toggle ng-disabled="disabled">Type  <span class="caret"></span></button>
         <ul ng-model='type' class="uib-dropdown-menu" aria-labelledby="type" >
           <li ng-repeat='type in types track by $index'><span ng-click="filter('type', type)">{{ type }}</span></li>
         </ul>
     </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenprice">
-      <button id="price" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Price  <span class="caret"></span></button>
+      <button id="price" type="button" class="filter-button" uib-dropdown-toggle ng-disabled="disabled">Price  <span class="caret"></span></button>
         <ul ng-model='price' class="uib-dropdown-menu" aria-labelledby="price">
           <li ng-repeat='price in prices track by $index'><span ng-click="priceFilter(price.label)">{{ price.label }}</span></li>
         </ul>
     </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenloadCapacity">
-      <button id="loadCapacity" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Load Capacity  <span class="caret"></span></button>
+      <button id="loadCapacity" type="button" class="filter-button" uib-dropdown-toggle ng-disabled="disabled">Load Capacity  <span class="caret"></span></button>
         <ul ng-model='loadCapacity' class="uib-dropdown-menu" aria-labelledby="loadCapacity">
           <li ng-repeat='load in loadCapacity track by $index'><span ng-click="filter('loadCapacity', load)">{{ load }}</span></li>
         </ul>
     </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenballMaterial">
-      <button id="ballMaterial" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Ball Material  <span class="caret"></span></button>
+      <button id="ballMaterial" type="button" class="filter-button" uib-dropdown-toggle ng-disabled="disabled">Ball Material  <span class="caret"></span></button>
         <ul ng-model='ballMaterial' class="uib-dropdown-menu" aria-labelledby="ballMaterial">
           <li ng-repeat='ball in ballMaterial track by $index'><span ng-click="filter('ballMaterial', ball)">{{ ball }}</span></li>
         </ul>
     </div>
     <div class="btn-group" uib-dropdown is-open="status.isopenhousingMaterial">
-      <button id="housingMaterial" type="button" class="btn btn-lg btn-primary" uib-dropdown-toggle ng-disabled="disabled">Housing Material  <span class="caret"></span></button>
+      <button id="housingMaterial" type="button" class="filter-button" uib-dropdown-toggle ng-disabled="disabled">Housing Material  <span class="caret"></span></button>
         <ul ng-model='housingMaterial' class="uib-dropdown-menu" aria-labelledby="housingMaterial">
           <li ng-repeat='house in housingMaterial track by $index'><span ng-click="filter('housingMaterial', house)">{{ house }}</span></li>
         </ul>
     </div>
+    <br>
+    <br>
 
   </div>
 </div>
-<br>
-<br>
 
 
 
-<div class='row'>
-      <div class='cell' ng-repeat='product in products | filter: type'>
-        <img class='img' ng-src="{{product.image1}}">
-        <!-- <img class='img' ng-src="{{product.image2}}"> -->
-          <p class='parens'><strong>(pictures are only illustrative)</strong></p>
-          <p><strong>Type:</strong> {{product.type}}</p>
-          <!-- <p>id: {{product._id}}</p> -->
-          <p><strong>SKU:</strong> {{product.sku}}</p>
-          <p><strong>Price:</strong> {{product.price | currency}}</p>
-          <p><strong>Load Capacity:</strong> {{product.loadCapacity}}</p>
-          <p><strong>Ball Material:</strong> {{product.ballMaterial}}</p>
-          <p><strong>Housing Material:</strong> {{product.housingMaterial}}</p>
-          <!-- <p>Weight: {{product.weight}} lbs</p> -->
-          <!-- <p>{{product.description}}</p> -->
-          <div class='row button-padding'>
-            <button class='btn btn-md btn-primary' ng-click='pushToShoppingCart(product)'>Add to Cart</button>
-            <button class='btn btn-md btn-danger' ng-click='getSingleProduct(product._id); openModal()'>Details</button>
+  <div class='row product-view'>
+        <div class='cell' ng-repeat='product in products | filter: type'>
+          <div class='align'>
+            <img class='img' ng-src="{{product.image1}}">
           </div>
-      </div>
-</div>
+          <!-- <img class='img' ng-src="{{product.image2}}"> -->
+            <p class='parens'><strong>(pictures are only illustrative)</strong></p>
+            <p><strong>Type:</strong> {{product.type}}</p>
+            <!-- <p>id: {{product._id}}</p> -->
+            <p><strong>SKU:</strong> {{product.sku}}</p>
+            <p><strong>Price:</strong> {{product.price | currency}}</p>
+            <p><strong>Load Capacity:</strong> {{product.loadCapacity}}</p>
+            <p><strong>Ball Material:</strong> {{product.ballMaterial}}</p>
+            <p><strong>Housing Material:</strong> {{product.housingMaterial}}</p>
+            <!-- <p>Weight: {{product.weight}} lbs</p> -->
+            <!-- <p>{{product.description}}</p> -->
+            <div class='row button-padding'>
+              <button class='btn btn-lg btn-primary' ng-click='pushToShoppingCart(product)'>Add to Cart</button>
+              <button class='btn btn-lg btn-danger' ng-click='getSingleProduct(product._id); openModal()'>Details</button>
+            </div>
+        </div>
+  </div>
+
 
 
 

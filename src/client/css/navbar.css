@@ -10,12 +10,13 @@
   border: 2px solid black;
 }
 
-.right {
+/*.right {
   float: right;
-}
+}*/
 
 .top-right {
   margin-top: -55px;
+  margin-left: 1em;
 }
 
 .center {

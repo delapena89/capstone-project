@@ -1,14 +1,14 @@
 .cell1 {
   background-color: lightblue;
   border:2px solid black;
-  padding-bottom: 16px;
+  padding-bottom: 23px;
 }
 
 .cell2 {
   background-color: lightblue;
   border:2px solid black;
   padding-top: 45px;
-  padding-bottom: 37px;
+  padding-bottom: 41px;
   text-align: center;
 }
 
@@ -20,7 +20,6 @@
   background-color: lightblue;
   border: 2px solid black;
   margin-top: 20px;
-  width: 100%;
 }
 
 .checkout {
